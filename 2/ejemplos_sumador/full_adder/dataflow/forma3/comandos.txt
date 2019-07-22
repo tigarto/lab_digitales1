@@ -1,0 +1,49 @@
+ghdl -a full_adder_dataflow.vhd
+ghdl -a --ieee=synopsys full_adder_dataflow_tb.vhd
+ghdl -r --ieee=synopsys full_adder_dataflow_tb --vcd=full_adder_dataflow_tb_results.vcd 
+gtkwave full_adder_dataflow_tb_results.vcd 
+
+
+
+
+-------------------------------------------------------------------
+
+
+https://www.ics.uci.edu/~jmoorkan/vhdlref/for_loop.html
+https://www.ics.uci.edu/~jmoorkan/vhdlref/
+http://www.brunel.ac.uk/~eestmba/hdl/opervhdl.html
+https://www.physi.uni-heidelberg.de/~angelov/VHDL/
+
+https://www.doulos.com/knowhow/perl/testbench_creation/
+http://www.syncad.com/syn_tb_diff.htm
+
+https://forums.xilinx.com/t5/Simulation-and-Verification/VHDL-Test-Bench-loop/td-p/508179
+https://stackoverflow.com/questions/26792961/vhdl-for-loop-in-test-bench-to-run-truth-table
+
+https://vhdlguide.readthedocs.io/en/latest/vhdl/testbench.html
+
+Test vector
+http://geobyjmhembeddedengineer.blogspot.com/2013/01/test-bench-for-truth-table.html
+https://www.inf.pucrs.br/moraes/laborg/T1/Advanced-VHDL_AbramovB.pdf
+https://books.google.com.co/books?id=No2CDwAAQBAJ&pg=PA115&lpg=PA115&dq=vhdl+test+bench+loop+true+table&source=bl&ots=UbMcD6C1_Z&sig=ACfU3U1_N3TlwvR4Aoeexgie-2bbXFs_Vg&hl=es&sa=X&ved=2ahUKEwiSu_flgsPjAhUmwVkKHRAHDscQ6AEwCHoECAkQAQ
+https://vhdlwhiz.com/while-loop/
+https://www.oipapio.com/question-4355984
+https://www.ics.uci.edu/~jmoorkan/vhdlref/while.html
+http://site.iugaza.edu.ps/alaashama/files/2015/09/VHDL_Lab7.pdf
+https://www.um.edu.mt/__data/assets/pdf_file/0005/58505/VHDL_notes.pdf
+https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_VHDL/Bancos_de_pruebas
+http://vhdl.renerta.com/source/vhd00042.htm
+
+https://lauri.xn--vsandi-pxa.com/hdl/ghdl.html
+
+https://www.allaboutcircuits.com/technical-articles/std-logic-vector-data-type-in-vhdl-code/
+https://vhdlwhiz.com/std_logic_vector/
+
+https://allaboutfpga.com/4-bit-ripple-carry-adder-vhdl-code/
+http://ati.ttu.ee/IAY0340/labs/Tutorials/SystemC/Adder.html
+
+
+http://www.ee.ic.ac.uk/pcheung/teaching/ee2_digital/Lecture%204-%20Verilog%20HDL-Part%202.pdf
+http://students.cse.tamu.edu/pritam2309/csce350/lab6.html
+
+

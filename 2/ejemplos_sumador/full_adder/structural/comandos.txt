@@ -1,0 +1,14 @@
+ghdl -a and2_gate.vhd
+ghdl -a or3_gate.vhd
+ghdl -a xor3_gate.vhd
+ghdl -a full_adder_structural.vhd
+ghdl -a --ieee=synopsys full_adder_structural_tb.vhd
+ghdl -r --ieee=synopsys full_adder_structural_tb --vcd=full_adder_structural_tb.vcd 
+gtkwave full_adder_structural_tb.vcd 
+
+https://www.eng.auburn.edu/~nelsovp/courses/
+https://www.eng.auburn.edu/~nelsovp/courses/elec3040_3050/
+https://www.eng.auburn.edu/~nelsovp/courses/elec4200/elec4200.html
+
+https://www.eng.auburn.edu/~nelsovp/courses/elec5200_6200/
+https://phoenix.goucher.edu/~kelliher/s2012/cs240/mar23.html	

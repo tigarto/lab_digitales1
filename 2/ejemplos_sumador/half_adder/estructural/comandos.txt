@@ -1,0 +1,21 @@
+
+ghdl -a xor2.vhd
+ghdl -a halfadder_structural_tb.vhd
+ghdl -r xor2_tb --vcd=xor2_tb_results.vcd 
+gtkwave xor2_tb_results.vcd 
+
+---------------------------------------------------------------------------------
+ghdl -a and2.vhd
+ghdl -a halfadder_structural_tb.vhd
+ghdl -r and2_tb --vcd=and2_tb_results.vcd 
+gtkwave and2_tb_results.vcd 
+---------------------------------------------------------------------------------
+
+ghdl -a and2.vhd
+ghdl -a xor2.vhd
+ghdl -a halfadder_structural.vhd
+ghdl -a halfadder_structural_tb.vhd
+ghdl -r halfadder_structural_tb --vcd=halfadder_structural_tb_results.vcd 
+gtkwave halfadder_structural_tb_results.vcd 
+
+

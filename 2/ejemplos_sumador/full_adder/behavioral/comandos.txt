@@ -1,0 +1,5 @@
+ghdl -a full_adder_behavioral.vhd
+ghdl -a --ieee=synopsys  full_adder_behavioral_tb.vhd
+ghdl -r --ieee=synopsys full_adder_behavioral_tb --vcd=full_adder_behavioral_tb_results.vcd 
+gtkwave full_adder_behavioral_tb_results.vcd 
+

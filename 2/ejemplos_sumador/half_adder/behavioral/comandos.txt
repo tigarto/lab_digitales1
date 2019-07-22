@@ -1,0 +1,5 @@
+ghdl -a halfadder_behavioral.vhd
+ghdl -a halfadder_behavioral_tb.vhd
+ghdl -r halfadder_behavioral_tb --vcd=halfadder_behavioral_tb_results.vcd 
+gtkwave halfadder_behavioral_tb_results.vcd 
+

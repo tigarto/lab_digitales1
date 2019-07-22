@@ -1,0 +1,10 @@
+ghdl -a halfadder_dataflow.vhd
+ghdl -a halfadder_dataflow_tb.vhd
+ghdl -r halfadder_dataflow_tb --vcd=halfadder_dataflow_tb_results.vcd 
+gtkwave halfadder_dataflow_tb_results.vcd 
+
+ 
+
+
+
+
