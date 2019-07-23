@@ -1,0 +1,5 @@
+ghdl -a tutorial.vhd
+ghdl -a --ieee=synopsys -fexplicit tutorial_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit tutorial_tb --vcd=tutorial_tb_results.vcd --stop-time=1000ns
+gtkwave tutorial_tb_results.vcd 
+
