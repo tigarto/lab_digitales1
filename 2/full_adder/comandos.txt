@@ -1,0 +1,5 @@
+ghdl -a fulladder_dataflow.vhd
+ghdl -a fulladder_dataflow_tb.vhd
+ghdl -r fulladder_dataflow_tb --vcd=fulladder_dataflow_tb_results.vcd 
+gtkwave fulladder_dataflow_tb_results.vcd 
+

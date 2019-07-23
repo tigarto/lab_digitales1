@@ -5,14 +5,14 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-library UNISIM;
-use UNISIM.VComponents.all;
+--library UNISIM;
+--use UNISIM.VComponents.all;
 
 Entity fulladder_dataflow_tb Is
 end fulladder_dataflow_tb;
 
 Architecture behavior of fulladder_dataflow_tb Is
-	Component rca_estructural
+	Component fulladder_dataflow
 	port (
 		a  	 : in STD_LOGIC;
 		b  	 : in STD_LOGIC;
