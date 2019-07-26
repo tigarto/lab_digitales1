@@ -1,0 +1,8 @@
+ghdl -a fulladder_dataflow.vhd
+ghdl -a rca_dataflow.vhd
+ghdl -a --ieee=synopsys rca_dataflow_tb.vhd
+ghdl -r --ieee=synopsys rca_dataflow_tb --vcd=full_adder_dataflow_tb_results.vcd 
+gtkwave full_adder_dataflow_tb_results.vcd 
+
+
+
