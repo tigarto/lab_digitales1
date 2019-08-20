@@ -203,7 +203,7 @@ begin
 end identifier
 ```
 
-** Simulación empleando el ghdl**
+**Simulación empleando el ghdl**
 
 No se preocupe, estos comandos se ejecutaron por que le computador en el que se hicieron no tenia Vivado. Por ello este proceso es sobrante y no lo tiene que llevar a cabo:
 
