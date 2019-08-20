@@ -1,7 +1,0 @@
-v 4
-file . "ROM_8x8_tb.vhd" "8895330f2a808a1b6a36fdccf089597323420e9c" "20190820090036.367":
-  entity rom_8x8_tb at 5( 118) + 0 on 33;
-  architecture behavior of rom_8x8_tb at 20( 430) + 0 on 34;
-file . "ROM_8x8.vhd" "0eaf40b7bdd3178329e31b0395cd56e5b4db9ae8" "20190820090033.726":
-  entity rom_8x8 at 5( 115) + 0 on 31;
-  architecture behavioral of rom_8x8 at 21( 455) + 0 on 32;
