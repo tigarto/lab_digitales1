@@ -1,5 +1,5 @@
 --------------------------------------------
--- Module Name: decoder_3to8_dataflow_tb
+-- Module Name: rom_tb
 --------------------------------------------
 
 library IEEE;
@@ -8,6 +8,8 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 use STD.textio.all; --for line
 use IEEE.std_logic_textio.all; --for write
+use ieee.numeric_std.all;
+
 
 -- library UNISIM;
 -- use UNISIM.VComponents.all;
@@ -20,9 +22,12 @@ Architecture behavior of rom_tb Is
 	CONSTANT WORDS     : integer := 8;
 	CONSTANT DATA_SIZE : integer := 8;
 	CONSTANT DELAY     : time := 10 ns;
+	CONSTANT LEN       : integer := 3;
 	
-	Signal addr_s	 : integer range 0 to WORDS -1;
+	Signal addr_s    : integer range 0 to WORDS -1;
 	Signal data_s    : std_logic_vector(DATA_SIZE-1 downto 0);
+	Signal addr_s2   : std_logic_vector(LEN-1 downto 0);
+	
 	
 	Component rom Is
 	generic(
@@ -58,8 +63,6 @@ Architecture behavior of rom_tb Is
 
 begin
 
-	
-
 	DUT: rom 
 	generic map ( 
 	  bits => DATA_SIZE,
@@ -73,21 +76,38 @@ begin
 
 	Estim: process
     begin
-        wait for DELAY;
+		--wait for DELAY;	
         for i in 0 to WORDS - 1 loop
             addr_s <= i;
             wait for DELAY;   
 		end loop;
-		wait; -- Veer despues
-	end process;
+		wait;
+	end process Estim;
 
-	Verific: process(addr_s)
+	
+
+	addr_s2 <= std_logic_vector(to_unsigned(addr_s, addr_s2'length)); -- Add for delay
+	
+	Verific: process(addr_s2)
 	variable proc_data : std_logic_vector(DATA_SIZE -1 downto 0);
 	variable s : line;
-	begin
-		
-	end process; 
-
-	  
+	begin		
+		expected_data(addr_s, proc_data);
+		-- If the outputs match, then announce it to the simulator console.
+		if ( data_s = proc_data) then
+			write (s, string'("MEMORY DATA MATCHED")); 
+			writeline (output, s);
+			write (s, string'("MEMORY[")); write (s, addr_s); write (s, string'("]: "));
+			write (s, string'("Expected: ")); write (s, proc_data);
+            write (s, string'("; Implemented: ")); write (s, data_s); 
+			writeline (output, s);
+		else
+		    write (s, string'("MEMORY DATA MISSMATCHED")); 
+		    write (s, string'("MEMORY[")); write (s, addr_s); write (s, string'("]: "));
+			write (s, string'("Expected: ")); write (s, proc_data);
+            write (s, string'("; Implemented: ")); write (s, data_s); 
+			writeline (output, s);
+		end if;	
+	end process Verific; 
 
 end behavior;
