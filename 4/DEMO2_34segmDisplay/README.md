@@ -1,13 +1,33 @@
 # DEMO2
 
-## Codido ##
+## Codigo ##
 
 1. [display34segm.vhd](display34segm.vhd)
 2. [test_34seg_disp.vhd](test_34seg_disp.vhd)
 3. [vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)
 4. [Basys3_Master_VGA-34segDisp.xdc](Basys3_Master_VGA-34segDisp.xdc)
 
+## display34segm ##
 
+## Descripción de la entidad 
+
+```vhdl
+entity display34segm is
+       generic(SG_WD : integer range 0 to 31 := 5; --Segment width
+               DL : integer range 0 to 511 := 100 --DYSPLAY_LENGTH
+               --DW:  --TODO: Display width
+        );  
+        port(segments : in STD_LOGIC_VECTOR (33 downto 0);
+             posx : in integer range 0 to 639;   --disp_posx 
+             posy : in integer range 0 to 479;   --disp_posy
+             hcount : in  STD_LOGIC_VECTOR (10 downto 0);
+             vcount : in  STD_LOGIC_VECTOR (10 downto 0);
+             paint : out  STD_LOGIC
+        );
+end display34segm;
+```
+
+**Codigo VHDL**: [vga_ctrl_640x480_60Hz.vhdl](vga_ctrl_640x480_60Hz.vhdl)
 
 ## Actividades ##
 
