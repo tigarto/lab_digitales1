@@ -31,11 +31,11 @@ end display34segm;
 
 ![image_architecture](display34segm.drawio.jpg)
 
-**Codigo VHDL**: [display34segm.vhd](display34segm.vhd)
+**Código VHDL**: [display34segm.vhd](display34segm.vhd)
 
-### Sobre la señal segments 
+### Sobre la señal *segments* 
 
-Sirve para definir cada uno de los segmentos (muy similar al decodificador de 7 segmentos), para el caso el mapa de segmentos asociados con cada bit de la señal segments se muestra a continuación:
+Sirve para definir cada uno de los segmentos (muy similar al decodificador de 7 segmentos), para el caso el mapa de segmentos asociados con cada bit de la señal *segments* se muestra a continuación:
 
 ![letra_image](letra.jpg)
 
