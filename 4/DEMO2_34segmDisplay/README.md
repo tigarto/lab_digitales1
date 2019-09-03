@@ -39,17 +39,16 @@ Sirve para definir cada uno de los segmentos (muy similar al decodificador de 7 
 
 ![letra_image](letra.jpg)
 
-La definición de la letra en cuestión dependera de prender y apagar los respectivos leds mediante la señal sements de acuerdo a la letra. Veamos:
+La definición del caracter alfa-numérico en cuestión dependerá de prender y apagar los respectivos leds mediante la señal *sements* de acuerdo al simbolo. Veamos:
 
-* **Letra A**: La siguiente letra muestra la letra A.
-
-![a_image](letra_a.jpg)
-
-Teniendo en cuenta lo anterior entonces:
+* **Letra A**: La siguiente secuencia permite desplegar la letra A.
 
 ```vhdl
 segment = "0011000111000001110100000010000000"
 ```
+
+![a_image](letra_a.jpg)
+
 
 * **Letra M**: La siguiente letra muestra la letra A.
 
