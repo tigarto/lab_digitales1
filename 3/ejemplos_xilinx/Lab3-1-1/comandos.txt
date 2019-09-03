@@ -1,0 +1,5 @@
+ghdl -a decoder_3to8_dataflow.vhd
+ghdl -a --ieee=synopsys decoder_3to8_dataflow_tb.vhd
+ghdl -r --ieee=synopsys decoder_3to8_dataflow_tb --vcd=decoder_3to8_dataflow_tb_results.vcd 
+gtkwave decoder_3to8_dataflow_tb_results.vcd
+

@@ -1,0 +1,73 @@
+$date
+  Mon Aug 19 23:07:16 2019
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_textio $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module comparador_tb $end
+$var reg 8 ! a_s[7:0] $end
+$var reg 8 " b_s[7:0] $end
+$var reg 1 # a_eq_b_s $end
+$var reg 1 $ a_gt_b_s $end
+$var reg 1 % a_lt_b_s $end
+$var reg 8 & a_s2[7:0] $end
+$var reg 8 ' b_s2[7:0] $end
+$scope module dut $end
+$var reg 8 ( a[7:0] $end
+$var reg 8 ) b[7:0] $end
+$var reg 1 * a_gt_b $end
+$var reg 1 + a_lt_b $end
+$var reg 1 , a_eq_b $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00000000 !
+b00000000 "
+1#
+0$
+0%
+b00000000 &
+b00000000 '
+b00000000 (
+b00000000 )
+0*
+0+
+1,
+#10000000
+b00000001 !
+0#
+1$
+b00000001 &
+b00000001 (
+1*
+0,
+#20000000
+b00000000 !
+b00000001 "
+0$
+1%
+b00000000 &
+b00000001 '
+b00000000 (
+b00000001 )
+0*
+1+
+#30000000

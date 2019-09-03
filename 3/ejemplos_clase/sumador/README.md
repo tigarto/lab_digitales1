@@ -142,3 +142,5 @@ A continuación se muestra el resultado de la grafica:
 
 
 #### Simulación mejorada ####
+
+Continuara...

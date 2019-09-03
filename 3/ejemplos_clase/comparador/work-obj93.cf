@@ -1,0 +1,7 @@
+v 4
+file . "comparador_tb.vhd" "3f3faac05c445f354ad99e0c7e334c3817afc3a5" "20190820040714.140":
+  entity comparador_tb at 5( 118) + 0 on 23;
+  architecture behavior of comparador_tb at 20( 436) + 0 on 24;
+file . "comparador.vhd" "78191d64414f3a0e96e7bff9aba0ffc8c5b38b91" "20190820035046.118":
+  entity comparador at 5( 122) + 0 on 17;
+  architecture behavior of comparador at 24( 503) + 0 on 18;

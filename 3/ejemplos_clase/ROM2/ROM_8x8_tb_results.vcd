@@ -1,0 +1,82 @@
+$date
+  Tue Aug 20 04:00:38 2019
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_textio $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module rom_8x8_tb $end
+$var reg 3 ! rom_addr_signal[2:0] $end
+$var reg 8 " rom_data_signal[7:0] $end
+$var reg 3 # rom_addr2_signal[2:0] $end
+$scope module dut $end
+$var reg 3 $ rom_addr[2:0] $end
+$var reg 8 % rom_data[7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b000 !
+b00000000 "
+b000 #
+b000 $
+b00000000 %
+#10000000
+b001 !
+b00010001 "
+b001 #
+b001 $
+b00010001 %
+#20000000
+b010 !
+b11110010 "
+b010 #
+b010 $
+b11110010 %
+#30000000
+b011 !
+b11000011 "
+b011 #
+b011 $
+b11000011 %
+#40000000
+b100 !
+b10100100 "
+b100 #
+b100 $
+b10100100 %
+#50000000
+b101 !
+b10010101 "
+b101 #
+b101 $
+b10010101 %
+#60000000
+b110 !
+b10000110 "
+b110 #
+b110 $
+b10000110 %
+#70000000
+b111 !
+b11100111 "
+b111 #
+b111 $
+b11100111 %
+#80000000
