@@ -1,4 +1,4 @@
-# DEMO2
+# DEMO2: Display 34 segmentos
 
 ## Codigos ##
 
@@ -35,11 +35,12 @@ end display34segm;
 
 ### Sobre la señal *segments* 
 
-Sirve para definir cada uno de los segmentos (muy similar al decodificador de 7 segmentos), para el caso el mapa de segmentos asociados con cada bit de la señal *segments* se muestra a continuación:
+Sirve para definir cada uno de los segmentos del display(Similar al display 7 segmentos). 
+A continuación se muestra la relación entre los bits de la señal *segments* y los segmentos del display:
 
 ![letra_image](letra.jpg)
 
-La definición del caracter alfa-numérico deseado dependerá de activar o desactivar los respectivos segmentos mediante la señal *segments*. Veamos:
+La visualización del caracter alfa-numérico deseado dependerá de activar o desactivar los respectivos segmentos mediante la señal *segments*. Veamos:
 
 * **Letra A**: La siguiente secuencia permite desplegar la letra A.
 
@@ -66,7 +67,7 @@ El mapa de caracteres se muestra en la siguiente figura:
 
 ## Actividades ##
 
-1. Dibuje la entidad **TOP** (sin describir los módulos internos) pero si resaltando las conexiones entre esta entidad y los elementos de la basys3. (**Nota**: No olvide observar el archivo *.xdc* proporcionado este *demo*).
+1. Dibuje la entidad **TOP** (sin describir los módulos internos) pero si resaltando las conexiones entre esta entidad y los elementos de la basys3. (**Nota**: No olvide observar el archivo *.xdc* proporcionado en este *demo*).
 2. Compruebe el funcionamiento del sistema. El sistema debe desplegar en la pantalla las siguientes letras:
 
 **Caso 1**: Despliegue de la A.
