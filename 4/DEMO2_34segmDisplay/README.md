@@ -39,7 +39,7 @@ Sirve para definir cada uno de los segmentos (muy similar al decodificador de 7 
 
 ![letra_image](letra.jpg)
 
-La definición del caracter alfa-numérico en cuestión dependerá de prender y apagar los respectivos leds mediante la señal *sements* de acuerdo al simbolo. Veamos:
+La definición del caracter alfa-numérico deseado dependerá de activar o desactivar los respectivos segmentos mediante la señal *segments*. Veamos:
 
 * **Letra A**: La siguiente secuencia permite desplegar la letra A.
 
@@ -50,7 +50,7 @@ segment = "0011000111000001110100000010000000"
 ![a_image](letra_a.jpg)
 
 
-* **Letra M**: La siguiente letra muestra la letra A.
+* **Letra M**: La siguiente secuencia permite desplegar la letra M.
 
 ```vhdl
 segment = "0000001111011111111000000001000000"
@@ -58,11 +58,7 @@ segment = "0000001111011111111000000001000000"
 
 ![m_image](letra_m.jpg)
 
-Teniendo en cuenta lo anterior entonces:
 
-```vhdl
-segment = "0000000000000000000000000000000000"
-```
 
 El mapa de caracteres se muestra en la siguiente figura:
 
@@ -70,10 +66,8 @@ El mapa de caracteres se muestra en la siguiente figura:
 
 ## Actividades ##
 
-1. Dibuje la entidad mas grande (sin mostrar los bloques internos) pero si resaltando las conexiones entre esta con los elementos de la basys3. (**Nota**: No olvide observar el archivo xdc proporsionado para esto).
-2. Pruebe el programa de acuerdo a los archivos facilitados:
-
-Si todo esta bien para cada caso se deben mostrar las siguientes salidas:
+1. Dibuje la entidad **TOP** (sin describir los módulos internos) pero si resaltando las conexiones entre esta entidad y los elementos de la basys3. (**Nota**: No olvide observar el archivo *.xdc* proporcionado este *demo*).
+2. Compruebe el funcionamiento del sistema. El sistema debe desplegar en la pantalla las siguientes letras:
 
 **Caso 1**: Despliegue de la A.
 
@@ -83,5 +77,5 @@ Si todo esta bien para cada caso se deben mostrar las siguientes salidas:
 
 ![foto_A](foto_M.jpg)
 
-2. Dibuje el diagrama de bloques del código suministrado
-3. Haga las modificaciones en el programa de acuerdo a las indicaciones dadas. Esto será un ejercicio de refuerzo previo a la practica.
+3. Dibuje el diagrama de bloques del código suministrado.
+4. Realice las modificaciones en el programa de acuerdo a las indicaciones dadas. Este ejercicio sirve de refuerzo previo a la práctica.
