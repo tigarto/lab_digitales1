@@ -71,8 +71,8 @@ use UNISIM.VComponents.all;
 entity vga_ctrl_640x480_60Hz is
 port(
    rst         : in std_logic;
-   clk   : in std_logic;
-   rgb_in     : in std_logic_vector(11 downto 0);
+   clk         : in std_logic;
+   rgb_in      : in std_logic_vector(11 downto 0);
 	
    HS          : out std_logic;
    VS          : out std_logic;
