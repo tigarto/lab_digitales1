@@ -35,7 +35,7 @@ Para este caso, la forma como se almacenarian los datos en la ram seria como la 
 Teniendo en cuenta que:
 * bitsPerData = 12
 * columns = 5
-* rows = 5
+* rows = 8
 
 La definición en VDHL de la figura anterior estaria dada por el siguiente array:
 
@@ -67,7 +67,7 @@ La idea es almacenar los datos de la imagen siguiendo el siguiente patron:
 Teniendo en cuenta que:
 * bitsPerData = 12
 * columns = 5
-* rows = 5
+* rows = 8
   
 La definición en VHDL asociada al patron anterior se muestra a continuación:
 
