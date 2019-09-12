@@ -62,7 +62,7 @@ data <= rowData(((columns - pixel)*bitsPerData) - 1  downto ((columns - 1) - pix
 
 ### Forma 2 ###
 
-La idea es almacenar los datos de la imagen siguiendo el siguiente patron, y formar una matriz para acceder al RGB de cada pixel con la forma memoria(FILA)(COLUMNA):
+La idea es almacenar los datos de la imagen siguiendo el siguiente patrón, y formar una matriz para acceder al RGB de cada pixel con la forma  **memoria(FILA)(COLUMNA)**:
 
 ![patron](mem_example4.jpg) 
 
