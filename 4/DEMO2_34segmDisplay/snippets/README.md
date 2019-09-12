@@ -6,9 +6,9 @@ Supongase que se desea implementar en pantalla el siguiente dibujo:
 
 Cada cuadro del dibujo anterior representa un pixel, el cual tendrá asociado un color determinado de acuerdo a la combinacion de colores definida en el formato **RGB**. 
 
-Teniendo en cuenta que hay 4 bits por color, la combinación bit por bit **RBG** será dada por: **R3R2R1R0 G3G2G1G0 B3B2B1B0** 
+Teniendo en cuenta que para R(Red), para G(Green) y para B(Blue) se tienen 4 bits para cada letra, la combinación bit por bit **RBG** será dada por: **R3R2R1R0 G3G2G1G0 B3B2B1B0** 
 
-La representación RGB para cada uno de los colores del dibujo (Blanco o Verde) se obtienen de la siguiente forma: 
+De este modo, la representación RGB para cada uno de los colores del dibujo (Blanco o Verde) queda de la siguiente forma: 
 
 * **Blanco**: 
 ```bash  
