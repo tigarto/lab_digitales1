@@ -1,6 +1,6 @@
 # Ejemplo de uso de memorias #
 
-Supongase que se desea implementar en pantalla el siguiente dibujo.
+Supongase que se desea implementar en pantalla el siguiente dibujo:
 
 ![patron](mem_example.jpg)
 
@@ -21,7 +21,7 @@ R3R2R1R0 G3G2G1G0 B3B2B1B0 = 1111 1111 1111 = FFF
 R3R2R1R0 G3G2G1G0 B3B2B1B0 = 0000 1111 0000 = 0F0
 ```
 
-El valor asociado al color para cada pixel de memoria se mostraria a continuacion:
+El valor asociado al color para cada pixel de memoria se muestra a continuacion:
 
 ![patron](mem_example2.jpg) 
 
