@@ -4,7 +4,7 @@ Supongase que se desea implementar en pantalla el siguiente dibujo.
 
 ![patron](mem_example.jpg)
 
-Cada cuadro del dibujo anterior representa un pixel el cual tendrá asociado un color determinado de acuerdo a la combinacion de colores definida en el formato **RGB**. 
+Cada cuadro del dibujo anterior representa un pixel, el cual tendrá asociado un color determinado de acuerdo a la combinacion de colores definida en el formato **RGB**. 
 
 Teniendo en cuenta que hay 4 bits por color, la combinación bit por bit **RBG** será dada por: **R3R2R1R0 G3G2G1G0 B3B2B1B0** 
 
