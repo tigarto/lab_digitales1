@@ -62,7 +62,7 @@ data <= rowData(((columns - pixel)*bitsPerData) - 1  downto ((columns - 1) - pix
 
 ### Forma 2 ###
 
-La idea es almacenar los datos de la imagen siguiendo el siguiente patrón, y formar una matriz para acceder al RGB de cada pixel con la forma  **memoria(FILA)(COLUMNA)**:
+La idea es almacenar los datos de la imagen siguiendo el siguiente patrón, y formar una matriz para acceder al RGB de cada pixel con la forma:  ***memoria(FILA)(COLUMNA)***
 
 ![patron](mem_example4.jpg) 
 
@@ -88,7 +88,7 @@ CONSTANT my_memory: matrix_mem := (
 	(X"FFF",X"0F0",X"0F0",X"0F0",X"FFF"));
 ```
 
-A diferencia del anterior caso, la forma de acceder a un pixel es mucho más fácil. A continuación se muestra cómo se hace:
+A diferencia del anterior caso, la forma de acceder a un pixel es mucho más fácil. A continuación se muestra cómo se hace de una forma tan sencilla:
 
 ```vhd
 data <= my_memory(row)(column);
