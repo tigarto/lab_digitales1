@@ -1,7 +1,0 @@
-v 4
-file . "moore.vhd" "60e2644705dfcba301d47af6f7c23e436870fc72" "20190922080241.284":
-  entity fsm_moore at 1( 0) + 0 on 11;
-  architecture behavioral of fsm_moore at 14( 318) + 0 on 12;
-file . "moore_tb.vhd" "ed123bb2c746666bcb1609a23b7b0056fcf77c9f" "20190922081224.658":
-  entity fsm_moore_tb at 1( 0) + 0 on 15;
-  architecture behavioral of fsm_moore_tb at 10( 176) + 0 on 16;
