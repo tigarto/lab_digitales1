@@ -14,10 +14,21 @@ La maquina de estados Meay tiene una entrada (ain) y una salida (yout) si el num
 (calve: 0 esta inclusive, sin embargo, el reset cicle no cuenta como cero ver waveform en time = 400). 
 Desarrolle un testbench y verifique el modelo a traves de una simulación behavioral. Use Sw0 como la clock entrada de clock, SW2, ...
 
-ghdl -a --ieee=synopsys -fexplicit mealy1.vhd 
-ghdl -a --ieee=synopsys -fexplicit mealy1_tb.vhd
-ghdl -r --ieee=synopsys -fexplicit  FSM_MEALY_TB --stop-time=200ns --vcd=FSM_MEALY_TB_results.vcd
-gtkwave FSM_MEALY_TB_results.vcd
+ghdl -a --ieee=synopsys -fexplicit moore.vhd 
+ghdl -a --ieee=synopsys -fexplicit moore_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  FSM_MOORE_TB --stop-time=250ns --vcd=FSM_MOORE_TB_results.vcd
+gtkwave FSM_MOORE_TB_results.vcd
+
+
+https://docs.google.com/a/udea.edu.co/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxlbGVjdHJvbmljYWRpZ2l0YWwxMTd8Z3g6YmJlYWQ0NDRkOWUxNDMz
+
+
+https://docs.google.com/a/udea.edu.co/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxlbGVjdHJvbmljYWRpZ2l0YWwxMTd8Z3g6MWI3Y2MwMzYwNzZkZWU0Mw
+
+
+
+----
+
 
 
 https://www.studocu.com/es/document/universidad-rey-juan-carlos/estructura-de-computadores/ejercicios-obligatorios/tema08-ejercicios-sistemas-secuenciales/3398505/view
