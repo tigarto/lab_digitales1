@@ -1,23 +1,40 @@
-Design a sequence detector implementing a Mealy state machine using
-three always blocks. The Mealy state machine has one input (ain) and one
-output (yout). The output yout is 1 if and only if the total number of 1s
-received is divisible by 3 (hint: 0 is inclusive, however, reset cycle(s) do not
-count as 0- see in simulation waveform time=400). Develop a testbench and
-verify the model through a behavioral simulation. Use SW0 as the clock
-input, SW1 as the ain input, the BTNU button as reset input to the circuit,
-number of 1s count on LED7:LED4, and LED0 as the yout output. Go
-through the design flow, generate the bitstream, and download it into the
-Nexys3 board. Verify the functionality. 
+# Maquina Mealy ##
 
-Diseñe un detector de secuencia implementando una maquina de estados Mealy usando siemple bloques de tres.
-La maquina de estados Meay tiene una entrada (ain) y una salida (yout) si el numero total de unos es divisible por 3
-(calve: 0 esta inclusive, sin embargo, el reset cicle no cuenta como cero ver waveform en time = 400). 
-Desarrolle un testbench y verifique el modelo a traves de una simulación behavioral. Use Sw0 como la clock entrada de clock, SW2, ...
+## Maquina Mealy 3 bloques ##
 
+![maquina_moore_tres_bloques](maquina_moore_tres_bloques.jpg)
+
+## Ejemplo ##
+
+### Enunciado ###
+
+
+Design a sequence detector implementing a Moore state machine using three always blocks. The Moore state machine has two inputs (ain[1:0]) and one output (yout). The output yout begins as 0 and remains a constant value unless one of the following input sequences occurs:
+1. The input sequence ain[1:0] = 01, 00 causes the output to become 0
+2. (ii) The input sequence ain[1:0] = 11, 00 causes the output to become 1
+3. The input sequence ain[1:0] = 10, 00 causes the output to toggle.
+
+Develop a testbench (similar to the waveform shown below and verify the model through a behavioral simulation. Use SW0 as the clock input, SW2-SW1 as the ain[1:0] input, the BTNU button as reset input to the circuit, and
+LED0 as the yout output. Go through the design flow, generate the bitstream, and download it into the Nexys3 board. Verify the functionality.
+
+### Diagrama de estados de la solución ###
+
+![moore](moore.jpg)
+
+### Comandos de compilación en ghdl ###
+
+```bash
 ghdl -a --ieee=synopsys -fexplicit moore.vhd 
 ghdl -a --ieee=synopsys -fexplicit moore_tb.vhd
 ghdl -r --ieee=synopsys -fexplicit  FSM_MOORE_TB --stop-time=250ns --vcd=FSM_MOORE_TB_results.vcd
 gtkwave FSM_MOORE_TB_results.vcd
+```
+
+### Resultados  ###
+
+![moore_output](moore_output.png)
+
+
 
 
 https://docs.google.com/a/udea.edu.co/viewer?a=v&pid=sites&srcid=ZGVmYXVsdGRvbWFpbnxlbGVjdHJvbmljYWRpZ2l0YWwxMTd8Z3g6YmJlYWQ0NDRkOWUxNDMz
