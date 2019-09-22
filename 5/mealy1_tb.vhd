@@ -16,6 +16,7 @@ architecture Behavioral of FSM_MEALY_TB is
     -- declaraciones modelo FSM
 
     signal clk_int, reset_int, ain_int, yout_int: STD_LOGIC;
+    signal count_int: STD_LOGIC_VECTOR(3 DOWNTO 0);
     type STATES is (S0, S1, S2);
     signal state, state_next: STATES;
 
@@ -23,6 +24,7 @@ architecture Behavioral of FSM_MEALY_TB is
       Port ( reset : in STD_LOGIC;
              clk : in STD_LOGIC;
              ain : in STD_LOGIC;
+             count : out STD_LOGIC_VECTOR(3 DOWNTO 0);
              yout : out STD_LOGIC);
     end component;
 
@@ -33,6 +35,7 @@ begin
     reset => reset_int,
     clk => clk_int,
     ain => ain_int,
+    count => count_int,
     yout => yout_int
   );
   
@@ -47,17 +50,21 @@ begin
 
   data_gen_proc: process
   begin
-    ain_int <= '0';
+    ain_int <= '0';    -- 0 ns
     reset_int <= '1';
-    wait for 20 ns;
+    wait for 20 ns;    -- 20 ns
     reset_int <= '0';
-    wait for 20 ns;
+    wait for 20 ns;    -- 40 ns
     ain_int <= '1';
-    wait for 20 ns;
+    wait for 20 ns;    -- 60 ns
     ain_int <= '0';
-    wait for 60 ns;
+    wait for 60 ns;    -- 120 ns
     ain_int <= '1';
-    wait for 40 ns;
+    wait for 40 ns;    -- 160 ns
+    ain_int <= '0';
+    wait for 20 ns;    -- 180 ns
+    ain_int <= '1';
+    wait for 20 ns;    -- 200 ns
   end process data_gen_proc;
    
 end Behavioral;
