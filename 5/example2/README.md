@@ -12,8 +12,12 @@ Dibuje el diagrama de estados y la tabla de transición de estados de un circuit
 
 ![moore](moore_example2.jpg)
 
+**Link solución**: [moore](./moore) 
+
 ### Tipo Mealy ###
 
 ![mealy](example1_mealy.jpg)
 
+
+**Link solución**: [mealy](./mealy) 
 
