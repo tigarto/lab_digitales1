@@ -1,12 +1,12 @@
 # Maquina Mealy ##
 
-## Maquina Mealy 2 bloques ##
+## Maquina Mealy 3 bloques ##
 
-![maquina_mealy_dos_bloques](maquina_mealy_dos_bloques.jpg)
+![maquina_mealy_tres_bloques](maquina_mealy_tres_bloques.jpg)
 
 ## Ejemplo ##
 
-### Enunciado ##
+### Enunciado ###
 
 Dibuje el diagrama de estados y la tabla de transición de estados de un circuito secuencial el cual da una salida Z = 1 solamente cuando la entrada X es igual 1 durante 3 o más intervalos consecutivos de reloj.
 
@@ -36,20 +36,31 @@ architecture Behavioral of FSM_MEALY is
 
 begin
 
-    -- registro de estados
-    SYNC_PROC: process(clk,reset)
+    SYNC_PROC: process(clk, reset)
     begin
         if reset = '1' then
           state <= A;        
         elsif clk'event and clk='1' then
-            state <= next_state;            
+          state <= next_state;            
          end if;
     end process;
 
+    OUTPUT_DECODE : process (state, x)
+    begin
+      z <= '0';
+      case (state) is         
+        when D =>
+          if (x = '1') then
+            z <= '1';          
+          end if;        
+        when OTHERS =>
+            z <= '0';
+      end case;
+    end process;
     
     NEXT_STATE_DECODE : process(state, x)
     begin
-        z <= '0';
+        next_state <= A;
         case(state) is            
             when A =>
               if (x = '1') then                
@@ -68,8 +79,7 @@ begin
                 next_state <= A;
               end if; 
             when D =>
-              if (x = '1') then
-                z <= '1';
+              if (x = '1') then               
                 next_state <= D;                
               else 
                 next_state <= A;
@@ -81,10 +91,9 @@ end Behavioral;
 
 ### Comandos de compilación en ghdl ###
 
-
 ```bash 
-ghdl -a --ieee=synopsys -fexplicit mealy1.vhd 
-ghdl -a --ieee=synopsys -fexplicit mealy1_tb.vhd
+ghdl -a --ieee=synopsys -fexplicit mealy2.vhd 
+ghdl -a --ieee=synopsys -fexplicit mealy2_tb.vhd
 ghdl -r --ieee=synopsys -fexplicit  FSM_MEALY_TB --stop-time=200ns --vcd=FSM_MEALY_TB_results.vcd
 gtkwave FSM_MEALY_TB_results.vcd
 ```
@@ -168,4 +177,4 @@ begin
 end Behavioral;
 ```
 
-![mealy_output](mealy_output_forma1.png)
+![mealy_output_forma2](mealy_output_forma2.png)

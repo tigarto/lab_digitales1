@@ -1,24 +1,12 @@
-Design a sequence detector implementing a Mealy state machine using
-three always blocks. The Mealy state machine has one input (ain) and one
-output (yout). The output yout is 1 if and only if the total number of 1s
-received is divisible by 3 (hint: 0 is inclusive, however, reset cycle(s) do not
-count as 0- see in simulation waveform time=400). Develop a testbench and
-verify the model through a behavioral simulation. Use SW0 as the clock
-input, SW1 as the ain input, the BTNU button as reset input to the circuit,
-number of 1s count on LED7:LED4, and LED0 as the yout output. Go
-through the design flow, generate the bitstream, and download it into the
-Nexys3 board. Verify the functionality. 
+# Ejemplos con maquinas de estado #
 
-Diseñe un detector de secuencia implementando una maquina de estados Mealy usando siemple bloques de tres.
-La maquina de estados Meay tiene una entrada (ain) y una salida (yout) si el numero total de unos es divisible por 3
-(calve: 0 esta inclusive, sin embargo, el reset cicle no cuenta como cero ver waveform en time = 400). 
-Desarrolle un testbench y verifique el modelo a traves de una simulación behavioral. Use Sw0 como la clock entrada de clock, SW2, ...
+En el siguiente repositorio se muestran algunos ejemplos donde se implementan maquinas de estado Mealy y Moore empleando VHDL. Los enlaces de los ejemplos se encuentran en:
+1. [Enlace ejemplo 1](./example1/)
+2. [Enlace ejemplo 2](./example2/)
+3. [Enlace ejemplo 2](./example3/)
 
-ghdl -a --ieee=synopsys -fexplicit mealy1.vhd 
-ghdl -a --ieee=synopsys -fexplicit mealy1_tb.vhd
-ghdl -r --ieee=synopsys -fexplicit  FSM_MEALY_TB --stop-time=200ns --vcd=FSM_MEALY_TB_results.vcd
-gtkwave FSM_MEALY_TB_results.vcd
 
+<!---
 http://www.estadofinito.com/contador-en-vhdl/
 http://www.profesores.frc.utn.edu.ar/electronica/tecnicasdigitalesi/pub/file/cursoCavallero/J_002-CONTADORES.pdf
 https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_VHDL/Ejemplos/Contador
@@ -102,3 +90,4 @@ http://www.estadofinito.com/contador-en-vhdl/
 http://www.estadofinito.com/
 
 
+-->

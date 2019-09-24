@@ -1,12 +1,12 @@
 # Maquina Mealy ##
 
-## Maquina Mealy 3 bloques ##
+## Maquina Mealy 2 bloques ##
 
-![maquina_mealy_tres_bloques](maquina_mealy_tres_bloques.jpg)
+![maquina_mealy_dos_bloques](maquina_mealy_dos_bloques.jpg)
 
 ## Ejemplo ##
 
-### Enunciado ###
+### Enunciado ##
 
 Dibuje el diagrama de estados y la tabla de transición de estados de un circuito secuencial el cual da una salida Z = 1 cuando por una entrada X a ingresado la secuencia de bits 1101.
 
@@ -36,31 +36,20 @@ architecture Behavioral of FSM_MEALY is
 
 begin
 
-    SYNC_PROC: process(clk, reset)
+    -- registro de estados
+    SYNC_PROC: process(clk,reset)
     begin
         if reset = '1' then
           state <= S0;        
         elsif clk'event and clk='1' then
-          state <= next_state;            
+            state <= next_state;            
          end if;
     end process;
 
-    OUTPUT_DECODE : process (state, x)
-    begin
-      z <= '0';
-      case (state) is         
-        when S3 =>
-          if (x = '1') then
-            z <= '1';          
-          end if;        
-        when OTHERS =>
-            z <= '0';
-      end case;
-    end process;
     
     NEXT_STATE_DECODE : process(state, x)
     begin
-        next_state <= S0;
+        z <= '0';
         case(state) is            
             when S0 =>
               if (x = '1') then                
@@ -79,7 +68,8 @@ begin
                 next_state <= S3;
               end if; 
             when S3 =>
-              if (x = '1') then                
+              if (x = '1') then
+                z <= '1';
                 next_state <= S1;                
               else 
                 next_state <= S0;
@@ -91,17 +81,14 @@ end Behavioral;
 
 ### Comandos de compilación en ghdl ###
 
-
 ```bash 
-ghdl -a --ieee=synopsys -fexplicit mealy2.vhd 
-ghdl -a --ieee=synopsys -fexplicit mealy2_tb.vhd
+ghdl -a --ieee=synopsys -fexplicit mealy1.vhd 
+ghdl -a --ieee=synopsys -fexplicit mealy1_tb.vhd
 ghdl -r --ieee=synopsys -fexplicit  FSM_MEALY_TB --stop-time=230ns --vcd=FSM_MEALY_TB_results.vcd
 gtkwave FSM_MEALY_TB_results.vcd
 ```
 
 ### Resultados  ###
-
-
 
 ```vhdl
 library IEEE;
@@ -192,4 +179,4 @@ begin
 end Behavioral;
 ```
 
-![mealy_output_forma2](mealy_output_forma2.png)
+![mealy_output](mealy_output_forma1.png)

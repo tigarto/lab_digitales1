@@ -1,9 +1,8 @@
-
 # Maquina Mealy ##
 
-## Maquina Mealy 2 bloques ##
+## Maquina Mealy 3 bloques ##
 
-![maquina_mealy_dos_bloques](maquina_mealy_dos_bloques.jpg)
+![maquina_mealy_tres_bloques](maquina_mealy_tres_bloques.jpg)
 
 ## Ejemplo ##
 
@@ -40,7 +39,8 @@ architecture Behavioral of FSM_MEALY is
 
 begin
 
-    SYNC_PROC: process(clk)
+    -- registro de estados
+    SYNC_PROC: process(clk)    
     begin
         if clk'event and clk='1' then
             if reset='1' then 
@@ -58,15 +58,34 @@ begin
 
     count <= count_signal;
 
+
+    OUTPUT_DECODE : process (state, ain)
+    begin
+      yout <= '0';
+      case (state) is
+        when S0 =>
+          if (ain = '0') then
+            yout <= '1';     
+          end if;
+        when S3 =>
+          if (ain = '1') then
+            yout <= '1';     
+          end if;
+        when OTHERS =>
+            yout <= '0';
+        end case;
+
+    end process;
+
+    -- Lógica de estado siguiente (circuito combinacional)
     NEXT_STATE_DECODE : process(state, ain)
     begin
-        yout <= '0';
+        next_state <= S0;
         case(state) is            
             when S0 =>
               if (ain = '1') then                
                 next_state <= S1;
               else 
-                yout <= '1';
                 next_state <= S0;
               end if;
             when S1 =>
@@ -82,10 +101,9 @@ begin
                 next_state <= S2;
               end if;
             when S3 =>
-              if (ain = '1') then
-                yout <= '1';
+              if (ain = '1') then                
                 next_state <= S1;
-              else 
+              else                 
                 next_state <= S3;
               end if;
             end case;
@@ -96,8 +114,8 @@ end Behavioral;
 ### Comandos de compilación en ghdl ###
 
 ```bash
-ghdl -a --ieee=synopsys -fexplicit mealy1.vhd 
-ghdl -a --ieee=synopsys -fexplicit mealy1_tb.vhd
+ghdl -a --ieee=synopsys -fexplicit mealy2.vhd 
+ghdl -a --ieee=synopsys -fexplicit mealy2_tb.vhd
 ghdl -r --ieee=synopsys -fexplicit  FSM_MEALY_TB --stop-time=200ns --vcd=FSM_MEALY_TB_results.vcd
 gtkwave FSM_MEALY_TB_results.vcd
 ```
@@ -113,6 +131,7 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 
 entity FSM_MEALY_TB is
 end FSM_MEALY_TB;
+
 
 architecture Behavioral of FSM_MEALY_TB is
 
@@ -139,7 +158,7 @@ begin
     count => count_int,
     yout => yout_int
   );
-  
+
   clk_gen_proc: process
   begin
     clk_int <= '0';
@@ -170,6 +189,7 @@ begin
 end Behavioral;
 ```
 
-![output_waveform_mealy](output_waveform_mealy.png)
+![mealy_output_forma2](mealy_output_forma2.png)
+
 
 
