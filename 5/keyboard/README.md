@@ -129,5 +129,23 @@ Para mas informacion puede consultar el enlace [PS/2 Keyboard to ASCII Converter
 6. [Diligent Fundamentals](https://reference.digilentinc.com/learn/fundamentals/start)
 
 <!---
+http://www.secs.oakland.edu/~llamocca/Tutorials/VHDLFPGA/
+http://www.secs.oakland.edu/~llamocca/Tutorials/VHDLFPGA/Outline.pdf
+http://www.secs.oakland.edu/~llamocca/Tutorials/VHDLFPGA/Vivado/
+
+
+http://ece-research.unm.edu/jimp/vhdl_fpgas/slides/VGA.pdf
+http://ece-research.unm.edu/jimp/vhdl_fpgas/
+https://academic.csuohio.edu/chu_p/rtl/rtl_hardware.html
+https://academic.csuohio.edu/chu_p/rtl/chu_rtL_book/rtl_chap10_fsm.pdf
+https://academic.csuohio.edu/chu_p/rtl/fpga_vhdl.html
+http://ece-research.unm.edu/jimp/vhdl_fpgas/slides/UART.pdf
+http://ece-research.unm.edu/jimp/vhdl_fpgas/modules/divider/divider.vhd
+http://ece-research.unm.edu/jimp/vhdl_fpgas/slides/FSM.pdf
+http://ece-research.unm.edu/jimp/vhdl_fpgas/slides/sequential_design.pdf
+http://ece-research.unm.edu/jimp/vhdl_fpgas/slides/sequential_principle.pdf
+
+https://ece.gmu.edu/coursewebpages/ECE/ECE448/S13/
+http://ebook.pldworld.com/_eBook/FPGA%EF%BC%8FHDL/
 
 -->
