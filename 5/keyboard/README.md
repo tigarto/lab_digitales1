@@ -46,6 +46,54 @@ La siguiente figura muestra los scan codes que se asociados a las diferentes tec
 
 Para los break codes se antepone una F0 al scan code de la tecla asociada. Asi si se observa la figura anterior el break code para la tecla **A** (cuyo scan code asociado es **1C**) es **0F,1C**
 
+Para entender un poco mas lo anterior, supongamos que un usuario presiona la tecla **a** (minúscula). Tal y como se muestra en la tabla [ASCII Character Set]:
+
+![ascii_a](ascii_a.jpg)
+
+El ascii asociado a la letra **a** es la secuencia de bits **1100001 = 0x97**.
+
+#### Entendiendo un poco mas las señales la PS/2 Keyboard Interface ###
+
+**PS/2** (IBM Personal System/2) es una interfaz de teclados y ratones para PC a través de un conector Mini-DIN de 6 pines. La siguiente figura describe cada uno de los pines:
+
+![pines_ps2](pinout_ps2.jpg)
+
+Para el caso, las lineas de reloj y datos van separadas y siguen el formato de transimisión mostrado a continuación:
+
+![ps2_transmition](ps2_transmition.jpg)
+
+La figura anterior se puede analizar en los siguientes pasos:
+1. Inicialmente tanto la señal **Clock** como **Data** estan en nivel alto cuando no hay actividad. La señal de reloj (**Clock**) es proporsionada por el teclado y esta entre 10 kHz y 16.7 kHz (es decir, maneja periodos entre 60-100us).
+2. Cuando se van a transmitir datos se dan los siguientes eventos:
+   * La transmisión de los datos empieza con un **bit de start** colocando la linea **Data** en **0** (Nivel logico bajo).
+   * Despues del bit de start se envia un byte de datos, donde el bit LSB es enviado primero.
+   * A continuación se encia un bit de paridad (**parity**)
+   * Finalmente se envia el bit de **stop** (que emplea logica high) el cual indica que la transacción finalizo. 
+   * Una vez se completa la transmision tanto **Clock** como **Data** retornan al nivel logico alto.
+3. La lectura de cada uno de los bits se hacen en el flanco de bajada de la señal de reloj.
+
+**Ejemplo de una transacción**
+
+La siguiente figura muestra el diagrama de tiempos para el caso en el cual el usuario presiona la tecla **A** cuyo **scan code set 2** es **1C** (ver el Appendix:  Scan Code Set 2 del siguiente [enlace](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=28278929)).
+
+![trans](transaccion_ps2.jpg)
+
+Como se puede ver de la grafica tenemos los siguientes bits en el bus de datos durante la transmision:
+* **start**: 0
+* **Data**:
+  * **D0**: 0
+  * **D1**: 0
+  * **D2**: 1
+  * **D3**: 1
+  * **D4**: 1
+  * **D5**: 0
+  * **D6**: 0
+  * **D7**: 0
+* **parity**: 0
+* **stop**: 1
+
+Notese además que, la captura se hace en los flancos de bajada de la señal **ps2_clk**. Tambien, se puede ver que cuando empieza la transmisión, la señal **ps2_code_new** baja a 0 y permanece allí mientras la transacción este en proceso. Cuando la transacción se completa, la señal **ps2_clk** sube a 1 indicando que un nuevo codigo PS2 ha sido recibido y esta disponible en el bus **ps2_code**. En este caso, se recibio la secuencia **D0-D1-D2-D3-D4-D5-D6-D7 = 00111000** en la linea **Data**, sin embargo como **D0** es el bit LSB, entonces en **ps2_code** el byte recuperado una vez que la transmisión culmina será **D7-D6-D5-D4-D3-D2-D1-D0 = 00011100 = 0x1C**.
+
 ### Debounce Logic Circuit  (VHDL) ###
 
 El uso de switches mecanicos para interfaz de usuario es una practica común. Sin embargo, cuando estos switches son presionados sus contactos, a menudo rebotan (bounce) una y otra vez antes de alcanzar un estado estable. 
@@ -89,12 +137,22 @@ Esta parte esta relacionada con el archivo VHDL top el cual instancia la compone
 
 El codigo asociado se encuentra en el archivo [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)
 
-
 #### Diagrama de bloques ####
+
+El diagrama de bloques de asociado a este módulo se muestra en la siguiente figura:
+
+![keyboard_to_ascii](keyboard_to_ascii.jpg)
 
 A continuación se muestra la maquina de estados implementada en el codigo anterior:
 
 ![fsm](fsm.jpg)
+
+
+#### Ejemplo de una transacción ####
+
+TRabajando
+
+![ascii_code](ascii_code.jpg)
 
 ## Demostración ##
 
@@ -105,6 +163,9 @@ Empleando Vivado, monte la siguiente aplicación para cuyo caso se dan los sigui
 * [Basys3_Master_demo0KeyBoard.xdc](Basys3_Master_demo0KeyBoard.xdc)
 
 La siguientes imagenes evidencian el funcionamiento de la aplicación para los casos en los que se precionan la A y la Z. ¿Cual es el significado de la salida que se quiere expresar empleando los leds?
+
+
+
 
 **Letra A**
 
