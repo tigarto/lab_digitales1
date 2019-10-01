@@ -1,13 +1,10 @@
 
-
-
 ## Archivos asociados ##
 
 Los siguientes archivos son usados para implementar una aplicación que determina el caracter ascii asociado a una tecla presionada en un teclado PS/2. El código fuente para el **PS/2 keyboard to ASCII converter** consiste de los siguientes 3 archivos:
 * [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)
 * [ps2_keyboard.vhd](ps2_keyboard.vhd)
 * [debounce.vhd](debounce.vhd)
-
 
 
 ### PS/2 Keyboard Interface (VHDL) ###
@@ -56,7 +53,7 @@ El ascii asociado a la letra **a** es la secuencia de bits **1100001 = 0x97**.
 
 **PS/2** (IBM Personal System/2) es una interfaz de teclados y ratones para PC a través de un conector Mini-DIN de 6 pines. La siguiente figura describe cada uno de los pines:
 
-![pines_ps2](pinout_ps2.jpg)
+![pines_ps2](ps2pinout.jpg)
 
 Para el caso, las lineas de reloj y datos van separadas y siguen el formato de transimisión mostrado a continuación:
 
@@ -76,7 +73,7 @@ La figura anterior se puede analizar en los siguientes pasos:
 
 La siguiente figura muestra el diagrama de tiempos para el caso en el cual el usuario presiona la tecla **A** cuyo **scan code set 2** es **1C** (ver el Appendix:  Scan Code Set 2 del siguiente [enlace](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=28278929)).
 
-![trans](transaccion_ps2.jpg)
+![trans](ps2_transaction.jpg)
 
 Como se puede ver de la grafica tenemos los siguientes bits en el bus de datos durante la transmision:
 * **start**: 0
@@ -139,15 +136,12 @@ El código asociado se encuentra en el archivo [ps2_keyboard_to_ascii.vhd](ps2_k
 
 #### Diagrama de bloques ####
 
-<<<<<<< HEAD
 El diagrama de bloques de asociado a este módulo se muestra en la siguiente figura:
 
 ![keyboard_to_ascii](keyboard_to_ascii.jpg)
 
-A continuación se muestra la maquina de estados implementada en el codigo anterior:
-=======
 A continuación se muestra la máquina de estados implementada en el código anterior:
->>>>>>> master
+
 
 ![fsm](fsm.jpg)
 
