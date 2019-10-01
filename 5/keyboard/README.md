@@ -3,7 +3,7 @@
 
 ## Archivos asociados ##
 
-Los siguientes archivos son usados para implementar una aplicacion determina el caracter ascii asociado a una tecla presionada e un teclado PS/2. El codigo fuente para el **PS/2 keyboard to ASCII converter** consiste de los siguientes 3 archivos:
+Los siguientes archivos son usados para implementar una aplicación que determina el caracter ascii asociado a una tecla presionada en un teclado PS/2. El código fuente para el **PS/2 keyboard to ASCII converter** consiste de los siguientes 3 archivos:
 * [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)
 * [ps2_keyboard.vhd](ps2_keyboard.vhd)
 * [debounce.vhd](debounce.vhd)
@@ -14,15 +14,15 @@ Los siguientes archivos son usados para implementar una aplicacion determina el 
 
 #### Resumen ####
 
-Este componente recibe las transacciones desde un teclado PS/2 y obtiene los codigos make code (key press) y break code (key release) a una salida paralela.
+Este componente recibe las transacciones desde un teclado PS/2 y obtiene los códigos *make code* (key press) y *break code* (key release) a una salida paralela.
 
-#### Codigo asociado ####
+#### Código asociado ####
 
-El codigo asociado se encuentra en el archivo [ps2_keyboard.vhd](ps2_keyboard.vhd)
+El código asociado se encuentra en el archivo [ps2_keyboard.vhd](ps2_keyboard.vhd)
 
 #### Diagrama de bloques ####
 
-A continuación se muestra entidad asociada al codigo vhd:
+A continuación se muestra entidad asociada al código vhd:
 
 ![implementacion](implementacion.jpg)
 
@@ -36,15 +36,15 @@ La información de las entradas y las salidas se muestran a continuación:
 |ascii_new|1|out|standard logic|user logic|New code available flag. Esta flag se mantiene en bajo durante las coversiones de PS/2 a ASCCI. Una transición de bajo a alto indica que un nuevo codigo ASCII esta disponible en el bus ascci_code|
 |clk|1|in|standard logic|user logic|Reloj del sistema|
 
-La siguiente figura muestra la arquitectura del circuito digital implementado en el codigo anterior:
+La siguiente figura muestra la arquitectura del circuito digital implementado en el código anterior:
 
 ![PS2_arch](architecture.jpg)
 
-La siguiente figura muestra los scan codes que se asociados a las diferentes teclas:
+La siguiente figura muestra los *scan codes* asociados a las diferentes teclas:
 
 ![scan_codes](keyboard_scancodes.png)
 
-Para los break codes se antepone una F0 al scan code de la tecla asociada. Asi si se observa la figura anterior el break code para la tecla **A** (cuyo scan code asociado es **1C**) es **0F,1C**
+Para los *break codes* se antepone una F0 al scan code de la tecla asociada. Observando la figura anterior el *break code* para la tecla **A** (cuyo *scan code* asociado es **1C**) es **0F,1C**
 
 Para entender un poco mas lo anterior, supongamos que un usuario presiona la tecla **a** (minúscula). Tal y como se muestra en la tabla [ASCII Character Set]:
 
@@ -96,20 +96,20 @@ Notese además que, la captura se hace en los flancos de bajada de la señal **p
 
 ### Debounce Logic Circuit  (VHDL) ###
 
-El uso de switches mecanicos para interfaz de usuario es una practica común. Sin embargo, cuando estos switches son presionados sus contactos, a menudo rebotan (bounce) una y otra vez antes de alcanzar un estado estable. 
+El uso de switches mecánicos para interfaz de usuario es una práctica común. Sin embargo, cuando estos switches son presionados sus contactos, a menudo rebotan (bounce) una y otra vez antes de alcanzar un estado estable. 
 
 ![switch_bounce](switch_bounce.jpg)
 
-Un modulo anti-debounce es un sistema diseñado digital para corregir este problema. A continuación se muestra la implementación asociada.
+Un módulo anti-debounce puede ser un sistema digital diseñado para corregir este problema. A continuación se muestra la implementación asociada.
 
-#### Codigo asociado ####
+#### Código asociado ####
 
-El codigo asociado se encuentra en el archivo [debounce.vhd](debounce.vhd)
+El código asociado se encuentra en el archivo [debounce.vhd](debounce.vhd)
 
 
 #### Diagrama de bloques ####
 
-A continuación se muestra entidad asociada al codigo vhd:
+A continuación se muestra la entidad asociada a este código vhd:
 
 ![debounce](debounce.jpg)
 
@@ -122,28 +122,32 @@ La información de las entradas y las salidas se muestran a continuación:
 |button|1|in|standard logic|button or switch|Señal de entrada previa al debounce|
 |result|1|out|standard logic|user logic|debounced signal|
 
-El codigo vhdl describe el siguiente circuito digital:
+El código vhdl describe el siguiente circuito digital:
 
 ![debounce_circuit](debounce1.jpg)
 
-Para este ejemplo, el debounce es usado dentro del modulo 
+Para este ejemplo, el debounce es usado dentro del módulo 
 ps2_keyboard.vhd para propositos de sincronización
 
 ### PS/2 to ASCII Conversion (VHDL) ###
 
-Esta parte esta relacionada con el archivo VHDL top el cual instancia la componente asociada al teclado PS/2 (ps2_keyboard.vhd) y usa los codigos entregados por esta para controlar la maquina de estados asociada al conversor.
+Este módulo esta relacionado con el archivo VHDL top, el cual instancia el componente asociada al teclado PS/2 (ps2_keyboard.vhd) y usa los códigos entregados por esta para controlar la máquina de estados asociada al conversor.
 
-#### Codigo asociado ####
+#### Código asociado ####
 
-El codigo asociado se encuentra en el archivo [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)
+El código asociado se encuentra en el archivo [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)
 
 #### Diagrama de bloques ####
 
+<<<<<<< HEAD
 El diagrama de bloques de asociado a este módulo se muestra en la siguiente figura:
 
 ![keyboard_to_ascii](keyboard_to_ascii.jpg)
 
 A continuación se muestra la maquina de estados implementada en el codigo anterior:
+=======
+A continuación se muestra la máquina de estados implementada en el código anterior:
+>>>>>>> master
 
 ![fsm](fsm.jpg)
 
@@ -156,13 +160,13 @@ TRabajando
 
 ## Demostración ##
 
-Empleando Vivado, monte la siguiente aplicación para cuyo caso se dan los siguientes archivos:
+Empleando Vivado, implemente la siguiente aplicación para cuyo caso se dan los siguientes archivos:
 * [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)
 * [ps2_keyboard.vhd](ps2_keyboard.vhd)
 * [debounce.vhd](debounce.vhd)
 * [Basys3_Master_demo0KeyBoard.xdc](Basys3_Master_demo0KeyBoard.xdc)
 
-La siguientes imagenes evidencian el funcionamiento de la aplicación para los casos en los que se precionan la A y la Z. ¿Cual es el significado de la salida que se quiere expresar empleando los leds?
+La siguientes imagenes evidencian el funcionamiento de la aplicación para los casos en los que se presionan la A y la Z. ¿Cuál es el significado de la salida que se quiere expresar empleando los leds?
 
 
 
@@ -176,7 +180,7 @@ La siguientes imagenes evidencian el funcionamiento de la aplicación para los c
 ![A](letra_Z.jpg)
 
 ## Notas adicionales ##
-Para mas informacion puede consultar el enlace [PS/2 Keyboard to ASCII Converter (VHDL)](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=28279002)
+Para mas información puede consultar el enlace [PS/2 Keyboard to ASCII Converter (VHDL)](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=28279002)
 
 
 
