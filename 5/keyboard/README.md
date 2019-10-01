@@ -104,7 +104,7 @@ Empleando Vivado, implemente la siguiente aplicación para cuyo caso se dan los 
 * [debounce.vhd](debounce.vhd)
 * [Basys3_Master_demo0KeyBoard.xdc](Basys3_Master_demo0KeyBoard.xdc)
 
-La siguientes imagenes evidencian el funcionamiento de la aplicación para los casos en los que se precionan la A y la Z. ¿Cuál es el significado de la salida que se quiere expresar empleando los leds?
+La siguientes imagenes evidencian el funcionamiento de la aplicación para los casos en los que se presionan la A y la Z. ¿Cuál es el significado de la salida que se quiere expresar empleando los leds?
 
 **Letra A**
 
