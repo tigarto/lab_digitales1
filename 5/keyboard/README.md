@@ -168,9 +168,11 @@ A continuación se muestra la máquina de estados implementada en el código [ps
 
 #### Ejemplo de una transacción ####
 
-TRabajando
+Para entender un poco mas lo anterior, supongamos que un usuario presiona la tecla **A** (minúscula). Tal y como se muestra en la tabla [ASCII Character Set]():
 
 ![ascii_code](ascii_code.jpg)
+
+Tal y como se muestra anterior, una vez que la PS/2 keyboard interface interna finaliza la recepción de la transacción PS/2, la bandera **ascii_new** deasserts (pasa a nivel bajo) para indicar que la conversion de new PS/2 a ASCII esta en proceso. Cuando la transacción se completa la bandera **ascii_new** pasa a alto para indicar que un nuevo codigo ascii ha sido recibido y esta disponible en el bus ascii. Para el caso, el codigo PS/2 recibido es **0x1C** (make code de la letra **A**) y el codigo ascii recuperado es **0x61** (ascii del caracter **a**)
 
 ## Demostración ##
 
@@ -181,8 +183,6 @@ Empleando Vivado, implemente la siguiente aplicación para cuyo caso se dan los 
 * [Basys3_Master_demo0KeyBoard.xdc](Basys3_Master_demo0KeyBoard.xdc)
 
 La siguientes imagenes evidencian el funcionamiento de la aplicación para los casos en los que se presionan la A y la Z. ¿Cuál es el significado de la salida que se quiere expresar empleando los leds?
-
-
 
 
 **Letra A**
