@@ -27,13 +27,13 @@ La información de las entradas y las salidas se muestran a continuación:
 
 |Port|Width|Mode|Data Type|Interface|Description|
 |----|-----|----|---------|---------|-----------|
-|ascii_code|7|out|standard logic vector|user logic|Codigo ASCII de 7 bits obtenido desde el teclado PS/2|
+|clk|1|in|standard logic|user logic|Reloj del sistema|
 |ps2_clk|1|in|standard logic|PS/2 keyboard|Señal de reloj proveniente del teclado PS/2|
 |ps2_data|1|in|standard logic|PS/2 keyboard|Señal de datos proveniente del teclado PS/2|
-|ascii_new|1|out|standard logic|user logic|New code available flag. Esta flag se mantiene en bajo durante las coversiones de PS/2 a ASCCI. Una transición de bajo a alto indica que un nuevo codigo ASCII esta disponible en el bus ascci_code|
-|clk|1|in|standard logic|user logic|Reloj del sistema|
+|ps2_code_new|1|out|standard logic|user logic|La flag se encuentra en bajo durante las trabsacciones  PS/2, y una transicion bajo a alto indica que un nuevo codigo se encuentra disponible en el bus ps2_code.|
+|ps2_code|8|out|standard logic vector|user logic|Codigo PS/2 de 8 bits recibido desde el teclado.|
 
-La siguiente figura muestra la arquitectura del circuito digital implementado en el código anterior:
+La siguiente figura muestra la arquitectura del circuito digital implementado en el código [ps2_keyboard.vhd](ps2_keyboard.vhd):
 
 ![PS2_arch](architecture.jpg)
 
@@ -41,13 +41,17 @@ La siguiente figura muestra los *scan codes* asociados a las diferentes teclas:
 
 ![scan_codes](keyboard_scancodes.png)
 
-Para los *break codes* se antepone una F0 al scan code de la tecla asociada. Observando la figura anterior el *break code* para la tecla **A** (cuyo *scan code* asociado es **1C**) es **0F,1C**
+Para los **break codes** se antepone una F0 al scan code de la tecla asociada. Observando la figura anterior el **break code** para la tecla **A** (cuyo **scan code** asociado es **1C**) es **0F,1C**. La [Scan Code Set 2](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=28278929#PS/2KeyboardInterface(VHDL)-Appendix:ScanCodeSet2) muestra todos los codigos asociados a las diferentes letras. En la siguiente figura se resalta el caso para la letra **A**:
 
+![scan_code_A](a_scan_code_sec_2.jpg)
+
+<!--
 Para entender un poco mas lo anterior, supongamos que un usuario presiona la tecla **a** (minúscula). Tal y como se muestra en la tabla [ASCII Character Set]:
 
 ![ascii_a](ascii_a.jpg)
 
 El ascii asociado a la letra **a** es la secuencia de bits **1100001 = 0x97**.
+-->
 
 #### Entendiendo un poco mas las señales la PS/2 Keyboard Interface ###
 
@@ -55,9 +59,9 @@ El ascii asociado a la letra **a** es la secuencia de bits **1100001 = 0x97**.
 
 ![pines_ps2](ps2pinout.jpg)
 
-Para el caso, las lineas de reloj y datos van separadas y siguen el formato de transimisión mostrado a continuación:
+Para el caso, las lineas de reloj (**Clock**) y datos (**Data**) van separadas y siguen el formato de transimisión mostrado a continuación:
 
-![ps2_transmition](ps2_transmition.jpg)
+![ps2_transmition](ps2_format.jpg)
 
 La figura anterior se puede analizar en los siguientes pasos:
 1. Inicialmente tanto la señal **Clock** como **Data** estan en nivel alto cuando no hay actividad. La señal de reloj (**Clock**) es proporsionada por el teclado y esta entre 10 kHz y 16.7 kHz (es decir, maneja periodos entre 60-100us).
@@ -128,11 +132,14 @@ ps2_keyboard.vhd para propositos de sincronización
 
 ### PS/2 to ASCII Conversion (VHDL) ###
 
-Este módulo esta relacionado con el archivo VHDL top, el cual instancia el componente asociada al teclado PS/2 (ps2_keyboard.vhd) y usa los códigos entregados por esta para controlar la máquina de estados asociada al conversor.
+El **PS/2 keyboard to ASCII converter** recibe la secuencia de datos enviadas desde el teclado PS/2 y determina cuales teclas estan siendo presionadas en un momento dado devolviendo el valor ascci (ver seccion **Appendix:  ASCII Character Set** del siguiente [enlace](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=28279002#PS/2KeyboardtoASCIIConverter%28VHDL%29-Appendix:ASCIICharacterSet)) correspondiente a la tecla presionada. 
 
 #### Código asociado ####
 
-El código asociado se encuentra en el archivo [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)
+El código asociado al **PS/2 keyboard to ASCII converter** consiste en los siguientes 3 archivos: 
+1. [debounce.vhd](debounce.vhd): Archivo en el cual se implementa el circuito de antideboune.
+2. [ps2_keyboard.vhd](ps2_keyboard.vhd): archivo que obtiene a partir de los bits enviados por las linea de Datos, los scan codes asociados a una tecla manipulada. 
+3. [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd): este es el archivo top level VDHL del conversor. Instancia el teclado PS/2 interface component (ps2_keyboard.vhd) encargado de manejar las transacciones con el teclado y devolver los scan codes asociados a dicha transacción. Los códigos (scan codes) entregados por este componente constituiran las señales de control (entradas) de la FSM del convesor a codigo ascii.
 
 #### Diagrama de bloques ####
 
@@ -140,8 +147,18 @@ El diagrama de bloques de asociado a este módulo se muestra en la siguiente fig
 
 ![keyboard_to_ascii](keyboard_to_ascii.jpg)
 
-A continuación se muestra la máquina de estados implementada en el código anterior:
+La información de las entradas y las salidas se muestran a continuación:
 
+|Port|Width|Mode|Data Type|Interface|Description|
+|----|-----|----|---------|---------|-----------|
+|ascii_code|7|out|standard logic vector|user logic|Codigo ASCII de 7 bits obtenido desde el teclado PS/2|
+|ps2_clk|1|in|standard logic|PS/2 keyboard|Señal de reloj proveniente del teclado PS/2|
+|ps2_data|1|in|standard logic|PS/2 keyboard|Señal de datos proveniente del teclado PS/2|
+|ascii_new|1|out|standard logic|user logic|New code available flag. Esta flag se mantiene en bajo durante las coversiones de PS/2 a ASCCI. Una transición de bajo a alto indica que un nuevo codigo ASCII esta disponible en el bus ascci_code|
+|clk|1|in|standard logic|user logic|Reloj del sistema|
+
+
+A continuación se muestra la máquina de estados implementada en el código [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd):
 
 ![fsm](fsm.jpg)
 
