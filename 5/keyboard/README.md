@@ -137,8 +137,8 @@ El **PS/2 keyboard to ASCII converter** recibe la secuencia de datos enviadas de
 #### Código asociado ####
 
 El código asociado al **PS/2 keyboard to ASCII converter** consiste en los siguientes 3 archivos: 
-1. [debounce.vhd](debounce.vhd): Archivo en el cual se implementa el circuito de antideboune.
-2. [ps2_keyboard.vhd](ps2_keyboard.vhd): archivo que obtiene a partir de los bits enviados por las linea de Datos, los scan codes asociados a una tecla manipulada. 
+1. [debounce.vhd](debounce.vhd): Archivo (analizado anteriormente) en el cual se implementa el circuito de antideboune.
+2. [ps2_keyboard.vhd](ps2_keyboard.vhd): archivo (analizado anteriormente) que obtiene a partir de los bits enviados por las linea de Datos, los scan codes asociados a una tecla manipulada. 
 3. [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd): este es el archivo top level VDHL del conversor. Instancia el teclado PS/2 interface component (ps2_keyboard.vhd) encargado de manejar las transacciones con el teclado y devolver los scan codes asociados a dicha transacción. Los códigos (scan codes) entregados por este componente constituiran las señales de control (entradas) de la FSM del convesor a codigo ascii.
 
 #### Diagrama de bloques ####
@@ -147,7 +147,11 @@ El diagrama de bloques de asociado a este módulo se muestra en la siguiente fig
 
 ![keyboard_to_ascii](keyboard_to_ascii.jpg)
 
-La información de las entradas y las salidas se muestran a continuación:
+La operación de la maquina de estados anterior se describe a continuación. 
+
+Una vez se completa el start-up (**begin**) el componente entra al estado **ready** esperando en este estado hasta que recibe un nuevo codigo PS/2 (**ps2_code_new** signal), una vez llega la señal anterior se pasa al estado **new_code**. El estado **new_code** se encarga de construir los *make o break codes* a partir de los datos obtenidos del bus **ps2_code**. En lo que respecta a la transición desde este estado se da de la siguiente manera; si el nuevo codigo recibido es el ultimo byte de un *make o break code* la maquina de estados va al estado **translate**, en caso contrario, retorna al estado **ready** para esperar el próximo byte. Una vez la maquina se encuentra en el estado de **translate**, el convertidor determina cual letra fue presionada obteniendo el valor ascii correspondiente esta. Si el codigo es un *break code* ninguna acción es necesaria asi que el convertidor ignora el codigo y retorna al estado **ready**; sin embargo, si un *make code* es recibido, el convertidor pasa al estado **output** donde las salida del codigo ascii resultante es llevada al bus **ascii_code** y la bandera **ascii_new** es seteada (levada a nivel alto) para indicar que el nuevo codigo esta disponible. Luego el convertidor retorna al estado **ready** para a la espera de la proxima comunicación desde PS/2 la keyboard interface component.
+
+La información de las entradas y las salidas propias de la entidad top ([ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd)) se muestran a continuación:
 
 |Port|Width|Mode|Data Type|Interface|Description|
 |----|-----|----|---------|---------|-----------|
@@ -156,7 +160,6 @@ La información de las entradas y las salidas se muestran a continuación:
 |ps2_data|1|in|standard logic|PS/2 keyboard|Señal de datos proveniente del teclado PS/2|
 |ascii_new|1|out|standard logic|user logic|New code available flag. Esta flag se mantiene en bajo durante las coversiones de PS/2 a ASCCI. Una transición de bajo a alto indica que un nuevo codigo ASCII esta disponible en el bus ascci_code|
 |clk|1|in|standard logic|user logic|Reloj del sistema|
-
 
 A continuación se muestra la máquina de estados implementada en el código [ps2_keyboard_to_ascii.vhd](ps2_keyboard_to_ascii.vhd):
 
