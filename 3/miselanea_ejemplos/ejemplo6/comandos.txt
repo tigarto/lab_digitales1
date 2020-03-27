@@ -1,0 +1,5 @@
+ghdl -a --ieee=synopsys fulladder.vhd fulladder_tb.vhd
+ghdl -r --ieee=synopsys fulladder_tb --vcd=fulladder_wf.vcd
+gtkwave fulladder_wf.vcd
+
+

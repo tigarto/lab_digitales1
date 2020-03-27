@@ -1,0 +1,109 @@
+$date
+  Thu Mar 26 20:45:47 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module inv_tv $end
+$var reg 4 ! a[3:0] $end
+$var reg 4 " y[3:0] $end
+$scope module dut $end
+$var reg 4 # a[3:0] $end
+$var reg 4 $ y[3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0001 !
+b1110 "
+b0001 #
+b1110 $
+#10000000
+b0010 !
+b1101 "
+b0010 #
+b1101 $
+#20000000
+b0011 !
+b1100 "
+b0011 #
+b1100 $
+#30000000
+b0100 !
+b1011 "
+b0100 #
+b1011 $
+#40000000
+b0101 !
+b1010 "
+b0101 #
+b1010 $
+#50000000
+b0110 !
+b1001 "
+b0110 #
+b1001 $
+#60000000
+b0111 !
+b1000 "
+b0111 #
+b1000 $
+#70000000
+b1000 !
+b0111 "
+b1000 #
+b0111 $
+#80000000
+b1001 !
+b0110 "
+b1001 #
+b0110 $
+#90000000
+b1010 !
+b0101 "
+b1010 #
+b0101 $
+#100000000
+b1011 !
+b0100 "
+b1011 #
+b0100 $
+#110000000
+b1100 !
+b0011 "
+b1100 #
+b0011 $
+#120000000
+b1101 !
+b0010 "
+b1101 #
+b0010 $
+#130000000
+b1110 !
+b0001 "
+b1110 #
+b0001 $
+#140000000
+b1111 !
+b0000 "
+b1111 #
+b0000 $
+#150000000
+b0000 !
+b1111 "
+b0000 #
+b1111 $
+#160000000

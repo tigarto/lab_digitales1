@@ -1,0 +1,7 @@
+v 4
+file . "multiplier_tb.vhd" "dc06b483b0b62e4ee502cd04dede39897717769a" "20200327152339.914":
+  entity multiplier_tb at 1( 0) + 0 on 13;
+  architecture rtl of multiplier_tb at 9( 156) + 0 on 14;
+file . "multiplier.vhd" "14ffc6e1cf133d4a50db2b928ad317ff1c6d814d" "20200327152339.898":
+  entity multiplier at 3( 33) + 0 on 11;
+  architecture synth of multiplier at 12( 234) + 0 on 12;

@@ -1,0 +1,5 @@
+ghdl -a --ieee=synopsys example.vhd example_tb.vhd
+ghdl -r --ieee=synopsys example_tb --vcd=example_wf.vcd
+gtkwave example_wf.vcd
+
+

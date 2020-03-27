@@ -1,0 +1,4 @@
+ghdl -a --std=08 --ieee=synopsys priorityckt.vhd priorityckt_tb.vhd
+ghdl -r --std=08 --ieee=synopsys priorityckt_tb --vcd=priorityckt_wf.vcd
+gtkwave priorityckt_wf.vcd
+

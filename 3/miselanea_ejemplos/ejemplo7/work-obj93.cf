@@ -1,0 +1,7 @@
+v 4
+file . "tristate.vhd" "1d4f4b5a70c8e8d4513ea5c9e61262bc16223f8f" "20200327041927.562":
+  entity tristate at 1( 0) + 0 on 15;
+  architecture synth of tristate at 9( 182) + 0 on 16;
+file . "tristate_tb.vhd" "1eaf244fd807d855a27c3f56d68c9e573073fd86" "20200327041927.567":
+  entity tristate_tb at 1( 0) + 0 on 17;
+  architecture rtl of tristate_tb at 8( 117) + 0 on 18;

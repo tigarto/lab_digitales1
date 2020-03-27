@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.86 (w)1999-2017 BSI
+[*] Fri Mar 27 13:59:31 2020
+[*]
+[dumpfile] "/home/tigarto/Documents/UdeA/electronica-digital/2020/lab3/sigasi_examples/ejemplo11/mux_2_8_wf.vcd"
+[dumpfile_mtime] "Fri Mar 27 13:58:04 2020"
+[dumpfile_size] 1249
+[savefile] "/home/tigarto/Documents/UdeA/electronica-digital/2020/lab3/sigasi_examples/ejemplo11/mux_2_8_wf.gtkw"
+[timestart] 0
+[size] 1366 703
+[pos] -174 -64
+*-24.223515 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 212
+[signals_width] 86
+[sst_expanded] 1
+[sst_vpaned_height] 184
+@22
+[color] 3
+mux_2_8_tb.d0[7:0]
+[color] 3
+mux_2_8_tb.d1[7:0]
+@29
+[color] 2
+mux_2_8_tb.s
+@22
+mux_2_8_tb.y[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

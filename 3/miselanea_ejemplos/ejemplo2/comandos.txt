@@ -1,0 +1,5 @@
+ghdl -a --ieee=synopsys gates.vhd gates_tb.vhd
+ghdl -r --ieee=synopsys gates_tb --vcd=gates_wf.vcd
+gtkwave gates_wf.vcd
+
+

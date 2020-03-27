@@ -1,0 +1,4 @@
+ghdl -a --std=08 --ieee=synopsys decoder3_8.vhd decoder3_8_tb.vhd
+ghdl -r --std=08 --ieee=synopsys decoder3_8_tb --vcd=decoder3_8_wf.vcd
+gtkwave decoder3_8_wf.vcd
+

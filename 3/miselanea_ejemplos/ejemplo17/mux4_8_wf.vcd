@@ -1,0 +1,125 @@
+$date
+  Fri Mar 27 10:41:29 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module mux4_8_tb $end
+$var reg 8 ! d0[7:0] $end
+$var reg 8 " d1[7:0] $end
+$var reg 8 # d2[7:0] $end
+$var reg 8 $ d3[7:0] $end
+$var reg 2 % s[1:0] $end
+$var reg 8 & y[7:0] $end
+$scope module dut $end
+$var reg 8 ' d0[7:0] $end
+$var reg 8 ( d1[7:0] $end
+$var reg 8 ) d2[7:0] $end
+$var reg 8 * d3[7:0] $end
+$var reg 2 + s[1:0] $end
+$var reg 8 , y[7:0] $end
+$var reg 8 - low[7:0] $end
+$var reg 8 . hi[7:0] $end
+$scope module lowmux $end
+$var reg 8 / d0[7:0] $end
+$var reg 8 0 d1[7:0] $end
+$var reg 1 1 s $end
+$var reg 8 2 y[7:0] $end
+$upscope $end
+$scope module himux $end
+$var reg 8 3 d0[7:0] $end
+$var reg 8 4 d1[7:0] $end
+$var reg 1 5 s $end
+$var reg 8 6 y[7:0] $end
+$upscope $end
+$scope module outmux $end
+$var reg 8 7 d0[7:0] $end
+$var reg 8 8 d1[7:0] $end
+$var reg 1 9 s $end
+$var reg 8 : y[7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b00000001 !
+b00000010 "
+b00000100 #
+b00001000 $
+b00 %
+b00000001 &
+b00000001 '
+b00000010 (
+b00000100 )
+b00001000 *
+b00 +
+b00000001 ,
+b00000001 -
+b00000100 .
+b00000001 /
+b00000010 0
+01
+b00000001 2
+b00000100 3
+b00001000 4
+05
+b00000100 6
+b00000001 7
+b00000100 8
+09
+b00000001 :
+#10000000
+b01 %
+b00000010 &
+b01 +
+b00000010 ,
+b00000010 -
+b00001000 .
+11
+b00000010 2
+15
+b00001000 6
+b00000010 7
+b00001000 8
+b00000010 :
+#20000000
+b10 %
+b00000100 &
+b10 +
+b00000100 ,
+b00000001 -
+b00000100 .
+01
+b00000001 2
+05
+b00000100 6
+b00000001 7
+b00000100 8
+19
+b00000100 :
+#30000000
+b11 %
+b00001000 &
+b11 +
+b00001000 ,
+b00000010 -
+b00001000 .
+11
+b00000010 2
+15
+b00001000 6
+b00000010 7
+b00001000 8
+b00001000 :
+#40000000

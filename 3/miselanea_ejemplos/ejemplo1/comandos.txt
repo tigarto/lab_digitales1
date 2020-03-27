@@ -1,0 +1,5 @@
+ghdl -a --ieee=synopsys inv.vhd inv_tv.vhd
+ghdl -r --ieee=synopsys inv_tv --vcd=inv_wf.vcd
+gtkwave inv_wf.vcd
+
+

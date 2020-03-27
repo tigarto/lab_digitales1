@@ -1,0 +1,5 @@
+ghdl -a --ieee=synopsys tristate.vhd tristate_tb.vhd
+ghdl -r --ieee=synopsys tristate_tb --vcd=tristate_wf.vcd
+gtkwave tristate_wf.vcd
+
+

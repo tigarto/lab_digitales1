@@ -1,0 +1,125 @@
+$date
+  Thu Mar 26 22:45:49 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_signed $end
+$upscope $end
+$scope module gates_tb $end
+$var reg 4 ! a[3:0] $end
+$var reg 4 " b[3:0] $end
+$var reg 4 # y1[3:0] $end
+$var reg 4 $ y2[3:0] $end
+$var reg 4 % y3[3:0] $end
+$var reg 4 & y4[3:0] $end
+$var reg 4 ' y5[3:0] $end
+$scope module dut $end
+$var reg 4 ( a[3:0] $end
+$var reg 4 ) b[3:0] $end
+$var reg 4 * y1[3:0] $end
+$var reg 4 + y2[3:0] $end
+$var reg 4 , y3[3:0] $end
+$var reg 4 - y4[3:0] $end
+$var reg 4 . y5[3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0000 !
+b1001 "
+b0000 #
+b1001 $
+b1001 %
+b1111 &
+b0110 '
+b0000 (
+b1001 )
+b0000 *
+b1001 +
+b1001 ,
+b1111 -
+b0110 .
+#20000000
+b1001 !
+b1101 "
+b1001 #
+b1101 $
+b0100 %
+b0110 &
+b0010 '
+b1001 (
+b1101 )
+b1001 *
+b1101 +
+b0100 ,
+b0110 -
+b0010 .
+#40000000
+b1111 !
+b1000 "
+b1000 #
+b1111 $
+b0111 %
+b0111 &
+b0000 '
+b1111 (
+b1000 )
+b1000 *
+b1111 +
+b0111 ,
+b0111 -
+b0000 .
+#60000000
+b1100 !
+b1001 "
+b1101 $
+b0101 %
+b0010 '
+b1100 (
+b1001 )
+b1101 +
+b0101 ,
+b0010 .
+#80000000
+b0010 !
+b0100 "
+b0000 #
+b0110 $
+b0110 %
+b1111 &
+b1001 '
+b0010 (
+b0100 )
+b0000 *
+b0110 +
+b0110 ,
+b1111 -
+b1001 .
+#100000000
+b0101 !
+b1011 "
+b0001 #
+b1111 $
+b1110 %
+b1110 &
+b0000 '
+b0101 (
+b1011 )
+b0001 *
+b1111 +
+b1110 ,
+b1110 -
+b0000 .
+#120000000

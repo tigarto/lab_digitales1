@@ -1,0 +1,7 @@
+v 4
+file . "mux2.vhd" "d3921423f3b8717ff05f22d2173e8ec88d4bd913" "20200327032641.583":
+  entity mux2 at 1( 0) + 0 on 15;
+  architecture synth of mux2 at 11( 185) + 0 on 16;
+file . "mux2_tb.vhd" "f6a6777f53341700f0cbce33100c0697dd8a27af" "20200327032641.587":
+  entity mux2_tb at 1( 0) + 0 on 17;
+  architecture rtl of mux2_tb at 8( 109) + 0 on 18;

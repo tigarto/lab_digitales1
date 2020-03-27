@@ -1,0 +1,7 @@
+v 4
+file . "gates.vhd" "1f71c9dea207e94b4b06fe06f1ccd00fd521fdec" "20200327034547.746":
+  entity gates at 1( 0) + 0 on 15;
+  architecture synth of gates at 12( 212) + 0 on 16;
+file . "gates_tb.vhd" "e3ba9a644549e55ff99d065b59c7b0a8448740fa" "20200327034547.773":
+  entity gates_tb at 1( 0) + 0 on 17;
+  architecture rtl of gates_tb at 11( 175) + 0 on 18;

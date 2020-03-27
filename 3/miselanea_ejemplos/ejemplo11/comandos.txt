@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys mux2.vhd mux2_8.vhd mux2_8_tb.vhd
+ghdl -r --ieee=synopsys mux_2_8_tb --vcd=mux_2_8_wf.vcd
+gtkwave mux_2_8_wf.vcd
+

@@ -1,0 +1,101 @@
+$date
+  Thu Mar 26 23:05:55 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module fulladder_tb $end
+$var reg 3 ! vector_inputs[2:0] $end
+$var reg 1 " cout $end
+$var reg 1 # s $end
+$scope module dut $end
+$var reg 1 $ a $end
+$var reg 1 % b $end
+$var reg 1 & cin $end
+$var reg 1 ' s $end
+$var reg 1 ( cout $end
+$var reg 1 ) p $end
+$var reg 1 * g $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b001 !
+0"
+1#
+0$
+0%
+1&
+1'
+0(
+0)
+0*
+#10000000
+b010 !
+1#
+1%
+0&
+1'
+1)
+#20000000
+b011 !
+1"
+0#
+1&
+0'
+1(
+#30000000
+b100 !
+0"
+1#
+1$
+0%
+0&
+1'
+0(
+#40000000
+b101 !
+1"
+0#
+1&
+0'
+1(
+#50000000
+b110 !
+1"
+0#
+1%
+0&
+0'
+1(
+0)
+1*
+#60000000
+b111 !
+1#
+1&
+1'
+#70000000
+b000 !
+0"
+0#
+0$
+0%
+0&
+0'
+0(
+0*
+#80000000

@@ -1,0 +1,7 @@
+v 4
+file . "example_tb.vhd" "928594cda507047081ec97589b60373118a8e980" "20200327042826.487":
+  entity example_tb at 1( 0) + 0 on 13;
+  architecture rtl of example_tb at 8( 115) + 0 on 14;
+file . "example.vhd" "22181d62ff0a9dc48eb3975b7bd16e720b1d31b8" "20200327042826.482":
+  entity example at 2( 1) + 0 on 11;
+  architecture synth of example at 10( 132) + 0 on 12;

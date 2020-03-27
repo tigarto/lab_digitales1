@@ -1,0 +1,7 @@
+v 4
+file . "fulladder_tb.vhd" "6096c98f3e1e8428da55ec8b7b0a3e6fc4db8fa7" "20200327040553.598":
+  entity fulladder_tb at 1( 0) + 0 on 21;
+  architecture rtl of fulladder_tb at 10( 182) + 0 on 22;
+file . "fulladder.vhd" "35f65b4e1cc691abcccd9cb78e7b6fafad1b2246" "20200327040553.588":
+  entity fulladder at 1( 0) + 0 on 19;
+  architecture synth of fulladder at 9( 137) + 0 on 20;

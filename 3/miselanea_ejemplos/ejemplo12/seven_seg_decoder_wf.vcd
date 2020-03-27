@@ -1,0 +1,99 @@
+$date
+  Fri Mar 27 09:23:45 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module textio $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module numeric_std_unsigned $end
+$upscope $end
+$scope module seven_seg_decoder_tb $end
+$var reg 4 ! data[3:0] $end
+$var reg 7 " segments[6:0] $end
+$scope module dut $end
+$var reg 4 # data[3:0] $end
+$var reg 7 $ segments[6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0001 !
+b0110000 "
+b0001 #
+b0110000 $
+#10000000
+b0010 !
+b1101101 "
+b0010 #
+b1101101 $
+#20000000
+b0011 !
+b1111001 "
+b0011 #
+b1111001 $
+#30000000
+b0100 !
+b0110011 "
+b0100 #
+b0110011 $
+#40000000
+b0101 !
+b1011011 "
+b0101 #
+b1011011 $
+#50000000
+b0110 !
+b1011111 "
+b0110 #
+b1011111 $
+#60000000
+b0111 !
+b1110000 "
+b0111 #
+b1110000 $
+#70000000
+b1000 !
+b1111111 "
+b1000 #
+b1111111 $
+#80000000
+b1001 !
+b1110011 "
+b1001 #
+b1110011 $
+#90000000
+b1010 !
+b0000000 "
+b1010 #
+b0000000 $
+#100000000
+b1011 !
+b1011 #
+#110000000
+b1100 !
+b1100 #
+#120000000
+b1101 !
+b1101 #
+#130000000
+b1110 !
+b1110 #
+#140000000
+b1111 !
+b1111 #
+#150000000
+b0000 !
+b1111110 "
+b0000 #
+b1111110 $
+#160000000

@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys --std=08 seven_seg_decoder.vhd seven_seg_decoder_tb.vhd
+ghdl -r --std=08 --ieee=synopsys seven_seg_decoder_tb --vcd=seven_seg_decoder_wf.vcd
+gtkwave seven_seg_decoder_wf.vcd
+
