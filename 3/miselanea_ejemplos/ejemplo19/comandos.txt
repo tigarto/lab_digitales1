@@ -1,0 +1,4 @@
+ghdl -a --std=08 --ieee=synopsys andN.vhd andN_tb.vhd
+ghdl -r --std=08 --ieee=synopsys andN_tb --vcd=andN_wf.vcd
+gtkwave andN_wf.vcd
+

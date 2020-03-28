@@ -1,0 +1,7 @@
+v 4
+file . "andN.vhd" "a545edb61e0f87260a2c381b00aea4f5640ec8ff" "20200328043240.593":
+  entity andn at 1( 0) + 0 on 15;
+  architecture synth of andn at 10( 175) + 0 on 16;
+file . "andN_tb.vhd" "1df7a2aac8fd5701abe68f91bf8011cc7504c634" "20200328043240.602":
+  entity andn_tb at 1( 0) + 0 on 17;
+  architecture rtl of andn_tb at 8( 109) + 0 on 18;
