@@ -125,7 +125,7 @@ El esquema del test bench se muestra a continuación:
 **Comandos ghdl**: Los comandos ghdl para llevar a cabo la simulación se muestran a continuación:
 
 ``` 
-ghdl -a --ieee=synopsys inv.vhd inv_tv.vhd
-ghdl -r --ieee=synopsys inv_tv --vcd=inv_wf.vcd
-gtkwave inv_wf.vcd
+ghdl -a --ieee=synopsys gates.vhd gates_tb.vhd
+ghdl -r --ieee=synopsys gates_tb --vcd=gates_wf.vcd
+gtkwave gates_wf.vcd
 ```

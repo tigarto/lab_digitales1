@@ -24,9 +24,28 @@ Los dos principales propósitos de los lenguajes de descripción de hardware (HD
 * Es ideal pensar el sistema en bloques de lógica combinatoria, registros y maquinas de estado finitos, esbozar estos bloques en papel y mostrar como estna conectados antes de empezar a escribir código.
 * La mejor manera de aprender HDL es mediante ejemplos. Los HDLs tienen manera especificas para describir varias clases de logica las cuales con llamadas **idioms**. De modo que si usted necesita describir una clase especial de hardware, observe y analice ejemplos similares y adaptelos de acuerdo a sus necesidades.
 
+### Comentarios ###
+
+1. **Multilinea**:
+   
+```vhdl
+/*
+Comentario de varias
+lineas
+*/
+```
+
+2. **Una sola linea**:
+   
+```vhdl
+-- Comentario de una sola linea
+```
+
 ### Lógica combinacional ###
 En el caso de la lógica combinacional depende solamente de las entradas actuales. 
-1. [Bitwise Operators - Operadores sobre bits](./ejemplo1/README.md)
-2. [Bitwise Operators](./ejemplo2/README.md)
-
-
+1. [Bitwise Operators - Operadores sobre bits (parte 1)](./ejemplo1/README.md)
+2. [Bitwise Operators - Operadores sobre bits (parte 2)](./ejemplo2/README.md)
+3. [Reduction operands - Operadores de reducción](./ejemplo3/README.md)
+4. [Conditional Assignment - Asignación condicional (parte 1)](./ejemplo4/README.md)
+5. [Conditional Assignment - Asignación condicional (parte 2)](./ejemplo5/README.md)
+6. [Internal signals - señales internas](./ejemplo6/README.md)
