@@ -26,7 +26,7 @@ Los dos principales propósitos de los lenguajes de descripción de hardware (HD
 
 ### Lógica combinacional ###
 En el caso de la lógica combinacional depende solamente de las entradas actuales. 
-1. [Bitwise Operators - Operadores sobre bits](./ejemplo1/README.md): Estos operadores en señales single-bit (señales de un solo bit) o multi-bit (señales de multiples bits o buses). 
-2. [Bitwise Operators](./ejemplo2/README.md): Hay varios operadores sobre bits como ```AND```, ```OR```, ```NOT```, ```XOR```, etc.    
+1. [Bitwise Operators - Operadores sobre bits](./ejemplo1/README.md)
+2. [Bitwise Operators](./ejemplo2/README.md)
 
 
