@@ -52,3 +52,15 @@ En el caso de la lógica combinacional depende solamente de las entradas actuale
 7. [Presedence - Numbers - Z’s and X’s](./ejemplo7/README.md)
 8. [Bit Swizzling - Delays](./ejemplo8/README.md)
 9. [Structural modeling](./ejemplo9/README.md)
+
+
+## Referencias ##
+1. [VHDL GUIDES](https://www.ics.uci.edu/~jmoorkan/vhdlref/)
+2. [VHDL Tutorials and Examples](https://www.nandland.com/vhdl/tutorials/index.html)
+3. [Vhdl lectures](http://web.engr.oregonstate.edu/~traylor/ece474/vhdl_lectures/)
+4. [Programación en VHDL/Arquitectura](https://es.wikibooks.org/wiki/Programaci%C3%B3n_en_VHDL/Arquitectura)
+5. [All about fpga](https://allaboutfpga.com/)
+6. [VHDL 93 Reference Guide](https://www.hdlworks.com/hdl_corner/vhdl_ref/)
+7. [Altium - VHDL Language Reference](http://valhalla.altium.com/Learning-Guides/TR0114%20VHDL%20Language%20Reference.pdf)
+8. [ES 4 VHDL reference sheet](http://www.ece.tufts.edu/ee/201/vhdl_cheatsheet.pdf)
+9. [VHDL Quick Reference Card](https://owd.tcnj.edu/~hernande/r/VHDL_QRC__01.pdf)
