@@ -49,3 +49,6 @@ En el caso de la lógica combinacional depende solamente de las entradas actuale
 4. [Conditional Assignment - Asignación condicional (parte 1)](./ejemplo4/README.md)
 5. [Conditional Assignment - Asignación condicional (parte 2)](./ejemplo5/README.md)
 6. [Internal signals - señales internas](./ejemplo6/README.md)
+7. [Presedence - Numbers - Z’s and X’s](./ejemplo7/README.md)
+8. [Bit Swizzling - Delays](./ejemplo8/README.md)
+9. [Structural modeling](./ejemplo9/README.md)
