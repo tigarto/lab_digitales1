@@ -57,6 +57,11 @@ En el caso de la lógica combinacional depende solamente de las entradas actuale
 12. [Conditional Assignment - Asignación condicional (parte 3)](./ejemplo12/README.md)
 13. [Conditional Assignment - Sobre la clausula others](./ejemplo13/README.md)
 14. [Conditional Assignment - Asignación condicional (parte 4)](./ejemplo14/README.md)
+15. [Tipos de datos - Ejemplo mux8:1](./ejemplo15/README.md)
+16. [Tipos de datos - Ejemplo multiplicador](./ejemplo16/README.md)
+17. [Generic (Parte1)](./ejemplo17/README.md)
+18. [Generic (Parte2)](./ejemplo18/README.md)
+19. [Generate - Ejemplo AND de N entradas](./ejemplo19/README.md)
 
 
 ## Referencias ##
@@ -69,3 +74,9 @@ En el caso de la lógica combinacional depende solamente de las entradas actuale
 7. [Altium - VHDL Language Reference](http://valhalla.altium.com/Learning-Guides/TR0114%20VHDL%20Language%20Reference.pdf)
 8. [ES 4 VHDL reference sheet](http://www.ece.tufts.edu/ee/201/vhdl_cheatsheet.pdf)
 9. [VHDL Quick Reference Card](https://owd.tcnj.edu/~hernande/r/VHDL_QRC__01.pdf)
+10. [digikey eewiki](https://www.digikey.com/eewiki/display/LOGIC/Home)
+11. [Introduction to VHDL for Implementing Digital Designs into FPGAs](http://indico.ictp.it/event/a12223/session/2/contribution/2/material/0/1.pdf)
+12. [ES 4 VHDL reference sheet](http://www.ece.tufts.edu/ee/201/vhdl_cheatsheet.pdf)
+13. [VHDL Quick Reference Guide](https://kadionik.vvv.enseirb-matmeca.fr/SoC/vhdl/vhdl%20ref.pdf)
+14. [VHDL Quick Reference Card](https://owd.tcnj.edu/~hernande/r/VHDL_QRC__01.pdf)
+15. [VHDL QUICK REFERENCE CARD](https://academic.csuohio.edu/chu_p/rtl/vhdl_stuff/card_vhdl.pdf)
