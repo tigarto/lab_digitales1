@@ -42,147 +42,106 @@ begin
 end architecture;
 ```
 
-A continuación se 
+A continuación se muestra un ejemplo en el cual se crea una compuerta and de 8 entradas a partir de operaciones and de 2 entradas.
 
-## Ejemplo - mux ##
+## Ejemplo - and de N entradas ##
 
-**Módulo**: [mux2.vhd](mux2.vhd)
+**Módulo**: [andN.vhd](andN.vhd)
 
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
-entity mux2 is
+entity andN is
 	generic(width : integer := 8);
-	port(d0, d1 : in  STD_LOGIC_VECTOR(width - 1 downto 0);
-	     s      : in  STD_LOGIC;
-	     y      : out STD_LOGIC_VECTOR(width - 1 downto 0));
+	port(a : in  STD_LOGIC_VECTOR(width - 1 downto 0);
+	     y : out STD_LOGIC);
 end;
 
-architecture synth of mux2 is
+architecture synth of andN is
+	signal x : STD_LOGIC_VECTOR(width - 1 downto 0);
 begin
-	y <= d1 when s = '1' else d0;
+	x(0) <= a(0);
+	gen : for i in 1 to width - 1 generate
+		x(i) <= a(i) and x(i - 1);
+	end generate;
+	y    <= x(width - 1);
 end;
 ```
 
-La descripción general del modulo se muestra en la siguiente grafica:
+Las entradas y salidas del modulo muestra en la siguiente grafica:
 
-![mux2](mux2.svg)
+![andN](andN.svg)
 
-**Módulo**: [mux4_8.vhd](mux4_8.vhd)
+El diagrama interno se muestra a continuación:
 
-
-```vhdl
-library IEEE;
-use IEEE.STD_LOGIC_1164.all;
-entity mux4_8 is
-	port(d0, d1, d2, d3 : in  STD_LOGIC_VECTOR(7 downto 0);
-	     s              : in  STD_LOGIC_VECTOR(1 downto 0);
-	     y              : out STD_LOGIC_VECTOR(7 downto 0));
-end;
-architecture struct of mux4_8 is
-	component mux2
-		generic(width : integer := 8);
-		port(d0, d1 : in  STD_LOGIC_VECTOR(width - 1 downto 0);
-		     s      : in  STD_LOGIC;
-		     y      : out STD_LOGIC_VECTOR(width - 1 downto 0));
-	end component;
-	signal low, hi : STD_LOGIC_VECTOR(7 downto 0);
-begin
-	lowmux : mux2
-		port map(d0 => d0,
-		         d1 => d1,
-		         s  => s(0),
-		         y  => low
-		        );
-	himux : mux2
-		port map(d0 => d2,
-		         d1 => d3,
-		         s  => s(0),
-		         y  => hi
-		        );
-	outmux : mux2
-		port map(d0 => low,
-		         d1 => hi,
-		         s  => s(1),
-		         y  => y
-		        );
-end;
-```
-
-La siguiente figura muestra el módulo anterior:
-
-![mux2](mux4_8.svg)
+![andN](andN1.svg)
 
 
-
-**Test bench**: [mux4_8_tb.vhd](mux4_8_tb.vhd)
+**Test bench**: [andN_tb.vhd](andN_tb.vhd)
 
 ```vhdl
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity mux4_8_tb is
-end entity mux4_8_tb;
+entity andN_tb is
+end entity andN_tb;
 
-architecture RTL of mux4_8_tb is
-	component mux4_8
+architecture RTL of andN_tb is
+	component andN
+		generic(width : integer);
 		port(
-			d0, d1, d2, d3 : in  STD_LOGIC_VECTOR(7 downto 0);
-			s              : in  STD_LOGIC_VECTOR(1 downto 0);
-			y              : out STD_LOGIC_VECTOR(7 downto 0)
+			a : in  STD_LOGIC_VECTOR(width - 1 downto 0);
+			y : out STD_LOGIC
 		);
-	end component mux4_8;
+	end component andN;
 	
-	signal d0, d1, d2, d3 : std_logic_vector(7 downto 0);
-	signal s : std_logic_vector(1 downto 0);	
-	signal y : std_logic_vector(7 downto 0);
-	
+	constant N : integer := 4;
 	constant T : time := 10 ns;
 	
+	
+	signal a : std_logic_vector(N - 1 downto 0) := (others => '0');
+	signal y : std_logic;
+		
 begin
 	
-	DUT : mux4_8
+	DTU: andN
+		generic map(
+			width => N
+		)
 		port map(
-			d0 => d0,
-			d1 => d1,
-			d2 => d2,
-			d3 => d3,
-			s  => s,
-			y  => y
+			a => a,
+			y => y
 		);
 		
-		estimulus : process is
-		begin
-			d0 <= X"01";
-			d1 <= X"02";
-			d2 <= X"04";
-			d3 <= X"08";
-			s <= "00";
-			for i in 0 to 3 loop
-				s <= std_logic_vector(to_unsigned(i, s'length));
-				wait for T;
-			end loop;
-			wait;			
-		end process estimulus;
-		
+	stimulus : process is
+	begin
+		for i in 0 to N - 1 loop
+			a <= std_logic_vector(to_unsigned(2*i,a'length));
+			wait for T;			
+		end loop;
+        a <= (others => '1');
+        wait for T;
+		wait;		
+	end process stimulus;
+	
 end architecture RTL;
 ```
 
 El esquema del test bench se muestra a continuación:
 
-![mux4_8_tb](mux4_8_tb.svg)
+![andN_tb](andN_tb.svg)
 
 **Simulación**: El resultado de la simulación se muestra en la siguiente figura:
 
-![mux4_8_wf](mux4_8_wf.png)
+![andN_wf](andN_wf.png)
 
 **Comandos ghdl**: Los comandos ghdl para llevar a cabo la simulación se muestran a continuación:
 
 ``` 
-ghdl -a --std=08 --ieee=synopsys mux2.vhd mux4_8.vhd mux4_8_tb.vhd
-ghdl -r --std=08 --ieee=synopsys mux4_8_tb --vcd=mux4_8_wf.vcd
-gtkwave mux4_8_wf.vcd
+ghdl -a --std=08 --ieee=synopsys andN.vhd andN_tb.vhd
+ghdl -r --std=08 --ieee=synopsys andN_tb --vcd=andN_wf.vcd
+gtkwave andN_wf.vcd
 ```
 
