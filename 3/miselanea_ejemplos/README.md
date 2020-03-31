@@ -51,7 +51,9 @@ En el caso de la lógica combinacional depende solamente de las entradas actuale
 6. [Internal signals - señales internas](./ejemplo6/README.md)
 7. [Presedence - Numbers - Z’s and X’s](./ejemplo7/README.md)
 8. [Bit Swizzling - Delays](./ejemplo8/README.md)
-9. [Structural modeling](./ejemplo9/README.md)
+9. [Structural modeling - Example 1](./ejemplo9/README.md)
+10. [Structural modeling - Example 2](./ejemplo10/README.md)
+11. [Structural modeling - Example 3](./ejemplo11/README.md)
 
 
 ## Referencias ##
