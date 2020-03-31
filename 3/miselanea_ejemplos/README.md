@@ -55,6 +55,8 @@ En el caso de la lógica combinacional depende solamente de las entradas actuale
 10. [Structural modeling - Example 2](./ejemplo10/README.md)
 11. [Structural modeling - Example 3](./ejemplo11/README.md)
 12. [Conditional Assignment - Asignación condicional (parte 3)](./ejemplo12/README.md)
+13. [Conditional Assignment - Sobre la clausula others](./ejemplo13/README.md)
+14. [Conditional Assignment - Asignación condicional (parte 4)](./ejemplo14/README.md)
 
 
 ## Referencias ##

@@ -1,4 +1,4 @@
-# Logica combinacional - Usan don't cares #
+# Logica combinacional - Sobre la clausula others #
 
 La clausula **others** de la estructura **case** (propia de los **process**) no es estrictamente necesaria para la sintesis de la logica por que todas las combinaciones de entrada estan definidas, pero es prudente para simulación en caso de que una de las entradas sea **x**, **z**, or **u**.
 
