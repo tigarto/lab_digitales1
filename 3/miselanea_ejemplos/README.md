@@ -80,3 +80,4 @@ En el caso de la lógica combinacional depende solamente de las entradas actuale
 13. [VHDL Quick Reference Guide](https://kadionik.vvv.enseirb-matmeca.fr/SoC/vhdl/vhdl%20ref.pdf)
 14. [VHDL Quick Reference Card](https://owd.tcnj.edu/~hernande/r/VHDL_QRC__01.pdf)
 15. [VHDL QUICK REFERENCE CARD](https://academic.csuohio.edu/chu_p/rtl/vhdl_stuff/card_vhdl.pdf)
+16. [Building Blocks](https://www.uio.no/studier/emner/matnat/fys/FYS4220/h12/documentation/vhdl_instructions.pdf)
