@@ -1,6 +1,6 @@
 # Contador simple con reset sincrono #
 
-El codigo mostrado a continuación muestra un contador con reset asincrono.
+El codigo mostrado a continuación muestra un contador con reset sincrono. ¿Que implica que sea sincrono?
 
 ## Archivos ##
 
@@ -24,18 +24,16 @@ END simple_int_counter;
 ARCHITECTURE counter OF simple_int_counter IS
 
 BEGIN
-	PROCESS (clock)
+	PROCESS (clock, reset)
 		VARIABLE count : INTEGER RANGE 0 to 255;
 	BEGIN		
-		ELSE
-			IF (clock'EVENT AND clock = '1') THEN
-                IF (reset = '0') THEN
-			        count := 0;				
-				IF (count = 255) THEN
-					count := 0;
-				ELSE
-					count := count + 1;
-				END IF;
+		IF (clock'EVENT AND clock = '1') THEN				
+			IF (reset = '0') THEN
+				count := 0;
+			ELSIF (count = 255) THEN
+				count := 0;
+			ELSE
+				count := count + 1;
 			END IF;
 		END IF;
 		q <= count;
@@ -89,8 +87,10 @@ begin
 
   clear_gen_signal: process
   begin
+    reset <= '1';
+    wait for 200 ns;     -- 200 ns
     reset <= '0';
-    wait for 40 ns;     -- 40 ns
+    wait for 200 ns;     -- 200 ns
     reset <= '1';
     wait;
   end process;
@@ -100,17 +100,9 @@ end test_arch;
 
 ## Resultados de las simulaciones ##
 
-### Formas de onda sin detallar ###
+### Formas de onda donde se detalla el efecto del reset sincrono ###
 
-![simple_int_counter_wf1](simple_int_counter_wf1.png)
-
-### Formas de onda donde se detalla el efecto del reset asincrono ###
-
-![simple_int_counter_wf2](simple_int_counter_wf2.png)
-
-### Forma de onda donde se resalta lo que sucede cuando el contador llega a su valor maximo ###
-
-![simple_int_counter_wf3](simple_int_counter_wf3.png)
+![simple_int_counter_wf2](simple_int_counter_wf.png)
 
 ## Comandos aplicados ##
 
