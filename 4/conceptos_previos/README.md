@@ -61,15 +61,6 @@ Dependen de la señal de reloj por lo tanto para que se refleje su efecto es nec
 No dependen de la señal de reloj. Esto hace que su efecto sea inmediato sin importar si hay o no señal de reloj.
 
 
-### Lineas de control de un contador ###
-
-Líneas de control de un contador:
-UP:
-DOWN:
-RESET:
-PRESET:
-LOAD:
-
 ### Tipos de señales ###
 
 ### Implementación de con VHDL ###
