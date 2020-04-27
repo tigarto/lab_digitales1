@@ -60,9 +60,6 @@ Dependen de la señal de reloj por lo tanto para que se refleje su efecto es nec
 #### Asincronas ####
 No dependen de la señal de reloj. Esto hace que su efecto sea inmediato sin importar si hay o no señal de reloj.
 
-
-### Tipos de señales ###
-
 ### Implementación de con VHDL ###
 
 Los contadores secuenciales usan una instrucción process para controlar las transiciones al siguiente estado de conteo.

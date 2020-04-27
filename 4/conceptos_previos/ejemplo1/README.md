@@ -1,6 +1,6 @@
 # Contador simple con reset asincrono #
 
-El codigo mostrado a continuación muestra un contador con reset asincrono.
+El codigo mostrado a continuación muestra un contador con reset asincrono. ¿Que significa esto?
 
 ## Archivos ##
 
