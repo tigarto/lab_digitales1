@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit Counter_4bit_Up.vhd 
+ghdl -a --ieee=synopsys -fexplicit Counter_4bit_Up_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  Counter_4bit_Up_tb --stop-time=500ns --vcd=Counter_4bit_Up_results.vcd
+gtkwave Counter_4bit_Up_results.vcd
