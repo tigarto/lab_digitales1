@@ -55,10 +55,10 @@ Un contador de **n-bits** cuyo módulo es menor que el máximo posible es llamad
 ### Tipos de señales ###
 
 #### Sincronas ####
-Dependen de la señal de reloj por lo tanto para que se refleje su efecto es necesario a que se de una transicion en la señal de reloj.
+Dependen de la señal de reloj por lo tanto para que se refleje su efecto es necesario a que se de una transicion en la señal de reloj. Ver [ejemplo 1](./ejemplo1/README.md)
 
 #### Asincronas ####
-No dependen de la señal de reloj. Esto hace que su efecto sea inmediato sin importar si hay o no señal de reloj.
+No dependen de la señal de reloj. Esto hace que su efecto sea inmediato sin importar si hay o no señal de reloj. Ver [ejemplo 2](./ejemplo2/README.md)
 
 ### Implementación de con VHDL ###
 
@@ -66,3 +66,14 @@ Los contadores secuenciales usan una instrucción process para controlar las tra
 El atributo usado para identificar una señal como señal de reloj es EVENT. Este combinado combinado con una comparación hecha sobre la señal define si la transición se da en flanco de subida o de bajada. Suponiendo que la señal definida como reloj se llamara clk, entonces según lo anterior se tiene:
 * **Caso flanco de subida**: (clk’EVENT AND clk=‘1).
 * **Caso flanco de bajada**: (clk’EVENT AND clk=‘1).
+
+## Ejemplos ##
+A continuación se muestran diferentes formas de hacer la implementación de contadores usando VHDL:
+1. [Ejemplo 1](./ejemplo1/README.md)
+2. [Ejemplo 2](./ejemplo2/README.md)
+3. [Ejemplo 3](./ejemplo3/README.md)
+4. [Ejemplo 4](./ejemplo4/README.md)
+5. [Ejemplo 5](./ejemplo5/README.md)
+6. [Ejemplo 6](./ejemplo6/README.md)
+7. [Ejemplo 7](./ejemplo7/README.md)
+8. [Ejemplo 8](./ejemplo8/README.md)
