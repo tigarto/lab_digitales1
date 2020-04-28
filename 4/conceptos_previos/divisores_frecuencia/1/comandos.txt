@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit clock_divider.vhd 
+ghdl -a --ieee=synopsys -fexplicit clock_divider_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit clock_divider_tb --stop-time=10ms --vcd=clock_divider_results.vcd
+gtkwave clock_divider_results.vcd

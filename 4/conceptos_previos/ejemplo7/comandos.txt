@@ -1,4 +1,0 @@
-ghdl -a --ieee=synopsys -fexplicit Counter_4bit_wEN.vhd 
-ghdl -a --ieee=synopsys -fexplicit Counter_4bit_wEN_tb.vhd
-ghdl -r --ieee=synopsys -fexplicit  Counter_4bit_wEN_tb --stop-time=500ns --vcd=Counter_4bit_wEN_results.vcd
-gtkwave Counter_4bit_wEN_results.vcd

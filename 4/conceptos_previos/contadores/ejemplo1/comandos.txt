@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit simple_int_counter.vhd 
+ghdl -a --ieee=synopsys -fexplicit simple_int_counter_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  simple_int_counter_tb --stop-time=2700ns --vcd=simple_int_counter_results.vcd
+gtkwave simple_int_counter_results.vcd

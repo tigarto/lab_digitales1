@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit clk200Hz.vhd 
+ghdl -a --ieee=synopsys -fexplicit clk200Hz_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit clk200Hz_tb --stop-time=10ms --vcd=clk200Hz_results.vcd
+gtkwave clk200Hz_results.vcd
