@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit vga_ctrl_640x480_60Hz.vhd 
+ghdl -a --ieee=synopsys -fexplicit Simple_Test_VGA.vhd
+ghdl -r --ieee=synopsys -fexplicit  Simple_Test_VGA --stop-time=34ms --vcd=Simple_Test_VGA.vcd
+gtkwave Simple_Test_VGA.vcd

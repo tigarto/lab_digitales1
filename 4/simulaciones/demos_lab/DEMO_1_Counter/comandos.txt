@@ -1,0 +1,7 @@
+ghdl -a --ieee=synopsys -fexplicit vga_ctrl_640x480_60Hz.vhd
+ghdl -a --ieee=synopsys -fexplicit BIN2BCD_0a999.vhd
+ghdl -a --ieee=synopsys -fexplicit Display.vhd
+ghdl -a --ieee=synopsys -fexplicit VGACounter.vhd
+ghdl -a --ieee=synopsys -fexplicit VGACounter_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  VGACounter_tb --stop-time=68ms --vcd=VGACounter_tb.vcd
+gtkwave VGACounter_tb.vcd
