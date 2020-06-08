@@ -57,7 +57,7 @@ end component;
 -- Declaracion segnales
 signal clk_50MHz: std_logic;
 signal reset: std_logic := '0';
-signal sw: std_logic_vector(2 downto 0);
+signal sw: std_logic_vector(2 downto 0) := "000"; -- Valor inicial a rojo
 signal hsync: std_logic;
 signal vsync: std_logic;
 signal rgb: std_logic_vector(2 downto 0);
@@ -68,7 +68,15 @@ signal green: std_logic_vector(3 downto 0);
 signal output_color: std_logic_vector(11 downto 0);
 
 -- Hacer un vector con las señales de test (Constante)
+type test_type is array (0 to 3) of std_logic_vector(2 downto 0);
 
+-- ROM definition
+constant test_vectors: test_type := (										
+										"100", -- sw = red 
+										"010", -- sw = green
+										"001", -- sw = blue
+										"110" -- sw = yellow
+									);
 	
 begin
 
@@ -113,19 +121,19 @@ begin
 	--	sw <= "110";
 	--	wait;
 	--end process;
-    sw_stimulus: process(vsync):
-        variable cnt:std_logic_vector(2 downto 0) := 0;
+    sw_stimulus: process(vsync)
+        variable i: integer := 0;
     begin
-        if rising_edge(vsync) then
-        
-
-    
+		if falling_edge(vsync) then
+			if(i <= 3) then				
+				sw <= test_vectors(i);
+				i := i + 1;
+			else
+				i := 0;
+			end if;
+		end if;    
     end process;
         
-
-	
-
-
     pixel_clk_stimulus: process(clk_50MHz)
 	begin
 		if (clk_50MHz'event and clk_50MHz = '1') then
@@ -164,30 +172,24 @@ begin
 
 			-- Write the red
 			write(line_el, string'(" "));
-			write(line_el, OUTPUT_COLOR(11 downto 8)); -- write the line (Red color).
+			write(line_el, output_color(11 downto 8)); -- write the line (Red color).
 			--write(line_el, red); -- write the line (Red color).
 
 			-- Write the green
 			write(line_el, string'(" "));
-			write(line_el, OUTPUT_COLOR(7 downto 4)); -- write the line (Green color).
+			write(line_el, output_color(7 downto 4)); -- write the line (Green color).
 			--write(line_el, green); -- write the line (Green color).
 
 
         	-- Write the blue
         	write(line_el, string'(" "));
-			write(line_el, OUTPUT_COLOR(3 downto 0)); -- write the line (Blue color).
+			write(line_el, output_color(3 downto 0)); -- write the line (Blue color).
 			--write(line_el, blue); -- write the line (Blue color).
 
     	    writeline(file_pointer, line_el); -- write the contents into the file.
 
     	end if;
-	end process;
-
-	
-   
-
-	
-	
+	end process;	
 end Behavioral;
 
 

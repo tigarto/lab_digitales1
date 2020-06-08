@@ -1,5 +1,5 @@
 ghdl -a --ieee=synopsys -fexplicit vga_sync.vhd 
 ghdl -a --ieee=synopsys -fexplicit vga_sync_test.vhd
 ghdl -a --ieee=synopsys -fexplicit vga_sync_test_tb.vhd
-ghdl -r --ieee=synopsys -fexplicit vga_sync_test_tb --stop-time=68ms --vcd=vga_sync_test_tb.vcd
+ghdl -r --ieee=synopsys -fexplicit vga_sync_test_tb --stop-time=83ms --vcd=vga_sync_test_tb.vcd
 gtkwave vga_sync_test_tb.vcd

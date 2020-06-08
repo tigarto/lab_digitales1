@@ -29,6 +29,7 @@ architecture arch of vga_sync is
    -- output buffer
    signal v_sync_reg, h_sync_reg: std_logic;
    signal v_sync_next, h_sync_next: std_logic;
+   
    -- status signal
    signal h_end, v_end, pixel_tick: std_logic;
 begin
@@ -45,8 +46,8 @@ begin
          mod2_reg <= mod2_next;
          v_count_reg <= v_count_next;
          h_count_reg <= h_count_next;
-         v_sync_reg <= v_sync_next;
-         h_sync_reg <= h_sync_next;
+         v_sync_reg <= not v_sync_next;
+         h_sync_reg <= not h_sync_next;
       end if;
    end process;
    -- mod-2 circuit to generate 25 MHz enable tick
