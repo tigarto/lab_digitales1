@@ -109,7 +109,21 @@ begin
 		wait;
 	end process;
 
-    -- NOTA: hacer esto con un event que dependa del sincronismo vertical (creo que hay si puede que de): Contador
+	sw_stimulus: process 
+	begin
+		sw <= "100";
+		wait until vsync'event and vsync='1';
+		sw <= "100";
+		wait until vsync'event and vsync='1';
+		sw <= "010";
+		wait until vsync'event and vsync='1';
+		sw <= "001";
+		wait until vsync'event and vsync='1';
+		sw <= "110";
+		wait;
+	end process;
+
+    -- NOTA: 
 	--sw_stimulus: process
 	--begin
 	--	sw <= "100";
@@ -121,18 +135,19 @@ begin
 	--	sw <= "110";
 	--	wait;
 	--end process;
-    sw_stimulus: process(vsync)
-        variable i: integer := 0;
-    begin
-		if falling_edge(vsync) then
-			if(i <= 3) then				
-				sw <= test_vectors(i);
-				i := i + 1;
-			else
-				i := 0;
-			end if;
-		end if;    
-    end process;
+	
+	-- sw_stimulus: process(vsync)
+    --    variable i: integer := 0;
+    -- begin
+	--	if falling_edge(vsync) then
+	--		if(i <= 3) then				
+	--			sw <= test_vectors(i);
+	--			i := i + 1;
+	--		else
+	--			i := 0;
+	--		end if;
+	--	end if;    
+    -- end process;
         
     pixel_clk_stimulus: process(clk_50MHz)
 	begin
