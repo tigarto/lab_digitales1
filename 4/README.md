@@ -45,7 +45,7 @@ Require control fino de las señales HS y VS. Para el caso de un frame de  640 c
   * **Display**: 480
   * **Front Porch**: 10	
   * **Sync Pulse**: 2	
-  * **Back Porch**: 32
+  * **Back Porch**: 33
 
 
 La siguiente figura muestra las caracteristicas basicas de una pantalla VGA:
@@ -54,13 +54,13 @@ La siguiente figura muestra las caracteristicas basicas de una pantalla VGA:
 
 Segun las caracteristicas para la pantalla tomadas de la lista anterior se tiene que:
 1. 60 Hz = 60 pantallazo/s
-2. 1 pantalla = 480 + 10  + 2 + 32 = 480  + 45 = 522 lineas.
+2. 1 pantalla = 480 + 10  + 2 + 33 = 480  + 45 = 523 lineas.
 3. 1 linea = 640 + 16 + 96 + 48 = 640 + 160 = 800 pixeles.
 
 Luego el pixel clock (tasa a la cyal cada pixel puede ser escrito) es:
 
 ```
-(60 pantallazo / 1s) * (522 lineas / 1 pantallazo)  * (800 pixeles / 1 linea) = 25 MHz
+(60 pantallazo / 1s) * (523 lineas / 1 pantallazo)  * (800 pixeles / 1 linea) = 25.104 MHz = 25 MHz (Aprox)
 ```
 
 Luego el tiempo por pixel es:
@@ -101,9 +101,7 @@ La siguiente figura muestra el timming para HS y VS. Note como VS es 0 en las fi
 
 ### Señales hcount y vcount ###
 
-Permiten conocer la posición. La siguiente figura muestra esto: 
-
-![vcount_hcount](vcount_hcount.png)
+Permiten conocer la posición. 
 
 ## Notas ##
 La información teorica fue tomada, traducida y adaptada de los enlaces colocados en la sección de referencias. Numeros del codigo que se proporciona puede variar un poco respecto a los valores que se tomaron en la explicación sin embargo la base en si es la misma.
@@ -111,4 +109,8 @@ La información teorica fue tomada, traducida y adaptada de los enlaces colocado
 ## Referencias ##
 1. [Tutorial: VHDL Coding for FPGAs – VGA Controller](http://www.secs.oakland.edu/~llamocca/Tutorials/VHDLFPGA/ISE/Unit_7/VGA_control.pdf)
 2. [Lab 4 : Video Graphics Array and Image Buffer](http://www.cs.ucr.edu/~jtarango/cs122a_lab4.html)
+3. [VGA Display Controller](https://reference.digilentinc.com/learn/programmable-logic/tutorials/vga-display-congroller/start)
+4. [VGA Controller (VHDL)](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=15925278)
+5. [A Simple VGA Controller for the Altera UP2 Board](https://www.eecg.utoronto.ca/~jayar/ece241_05F/vga_new/)
+6. [Controller](https://github.com/ZipCPU/vgasim)
 
