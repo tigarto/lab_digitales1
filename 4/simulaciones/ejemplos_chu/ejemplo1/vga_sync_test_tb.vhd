@@ -111,14 +111,15 @@ begin
 
 	sw_stimulus: process 
 	begin
+		wait for 1 ms;
 		sw <= "100";
-		wait until vsync'event and vsync='1';
+		wait until vsync'event and vsync='0'; 
 		sw <= "100";
-		wait until vsync'event and vsync='1';
+		wait until vsync'event and vsync='0';
 		sw <= "010";
-		wait until vsync'event and vsync='1';
+		wait until vsync'event and vsync='0';
 		sw <= "001";
-		wait until vsync'event and vsync='1';
+		wait until vsync'event and vsync='0';
 		sw <= "110";
 		wait;
 	end process;
