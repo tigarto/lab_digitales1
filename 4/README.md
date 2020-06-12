@@ -54,13 +54,13 @@ La siguiente figura muestra las caracteristicas basicas de una pantalla VGA:
 
 Segun las caracteristicas para la pantalla tomadas de la lista anterior se tiene que:
 1. 60 Hz = 60 pantallazo/s
-2. 1 pantalla = 480 + 10  + 2 + 33 = 480  + 45 = 523 lineas.
+2. 1 pantalla = 480 + 10  + 2 + 33 = 480 + 45 = 525 lineas.
 3. 1 linea = 640 + 16 + 96 + 48 = 640 + 160 = 800 pixeles.
 
 Luego el pixel clock (tasa a la cyal cada pixel puede ser escrito) es:
 
 ```
-(60 pantallazo / 1s) * (523 lineas / 1 pantallazo)  * (800 pixeles / 1 linea) = 25.104 MHz = 25 MHz (Aprox)
+(60 pantallazo / 1s) * (525 lineas / 1 pantallazo)  * (800 pixeles / 1 linea) = 25.2 MHz = 25 MHz (Aprox)
 ```
 
 Luego el tiempo por pixel es:
@@ -101,7 +101,13 @@ La siguiente figura muestra el timming para HS y VS. Note como VS es 0 en las fi
 
 ### Señales hcount y vcount ###
 
-Permiten conocer la posición. 
+Permiten conocer la posición (coordenadas) de un pixel en la pantalla.
+* **hcount**: Horizontal.
+* **vcount**: Verical. 
+
+La siguiente figura muestra como es maneja el sistema de coordenadas en VGA:
+
+![pixel](display.gif)
 
 ## Notas ##
 La información teorica fue tomada, traducida y adaptada de los enlaces colocados en la sección de referencias. Numeros del codigo que se proporciona puede variar un poco respecto a los valores que se tomaron en la explicación sin embargo la base en si es la misma.
@@ -113,4 +119,5 @@ La información teorica fue tomada, traducida y adaptada de los enlaces colocado
 4. [VGA Controller (VHDL)](https://www.digikey.com/eewiki/pages/viewpage.action?pageId=15925278)
 5. [A Simple VGA Controller for the Altera UP2 Board](https://www.eecg.utoronto.ca/~jayar/ece241_05F/vga_new/)
 6. [Controller](https://github.com/ZipCPU/vgasim)
+7. [University of Toronto's VGA Adapter](https://www.eecg.utoronto.ca/~jayar/ece241_08F/vga/vga-adapter.html)
 
