@@ -62,7 +62,7 @@ begin
 DUT_pong_graph_animate: entity work.pong_top_st 
 port map (
 	clk => clk_50MHz,
-	reset => ,
+	reset => reset,
 	btn => ,
 	video_on => ,
 	pixel_x,
