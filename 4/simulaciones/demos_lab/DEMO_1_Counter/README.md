@@ -3,7 +3,7 @@
 ## Funcionalidad ##
 Hacer un contador que permita vaya contando en pantalla desde 0 a 999 cada segundo. El contador tendra como entradas un reset y un enable. 
 
-* **Nota**: En la simulación no se pudo realizar el test cada segundo pues esto resultaba impractico. Mas adelante se mostrará lo que se hizo.
+* **Nota**: En la simulación no se pudo realizar el test cada segundo pues esto resultaba impractico. Para tratar con esto lo que se hizo fue modificar el tiempo de actualización del contador de modo que este no se actualizara cada segundo sino que lo hiciese aproximadamente cada cambio de pantalla (16.67ms); el valor elegido, sin ser el mas exacto para esto fue de **16.8 ms** como tiempo de actualizacion del contador. Mas adelante se mostrará la modificación que se hizo para esto.
 
 ## Código ##
 
