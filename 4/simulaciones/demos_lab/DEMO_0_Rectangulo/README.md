@@ -1,27 +1,43 @@
-# DEMO1
+# DEMO 0
+
+## Funcionamiento ##
+
+Esta aplicación permite hace un test bench del modulo VGA ([vga_ctrl_640x480_60Hz](vga_ctrl_640x480_60Hz.vhd)) dividiendo la pantalla en 4 regiones con diferentes colores de fondo tal y como se muestra en la siguiente figura:
+
+![frame](frame.png)
 
 ## Codido ##
 
-1. [Simple_Test_VGA.vhd](Simple_Test_VGA.vhd)
-2. [vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)
-3. [Basys3_Master_VGA-Rectangulo.xdc](Basys3_Master_VGA-Rectangulo.xdc)
+A continuación se muestran los diferetentes modulos vhdl de la aplicacion:
+1. **[vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)**: Driver VGA:
 
+![vga_module](vga_module.jpg)
 
-## Anotaciones ##
+2. **[Simple_Test_VGA.vhd](Simple_Test_VGA.vhd)**: Archivo de test bench del modulo **vga_ctrl_640x480_60Hz**. 
 
-Del archivo [Simple_Test_VGA.vhd](Simple_Test_VGA.vhd) gran parte de la clave para comprender el codigo se encuentra en:
+![tb_vga_module](tb_vga_module.jpg)
+
+En este archivo es donde se genera el fondo con el que se hace el test, a continuación se muestra el fragmento de código que hace esto:
 
 ```vhdl
--- Dibuja el cuadro y asigna colores
-   INT_RGB <= COLOR when ((VCOUNT>=150) AND (VCOUNT<=330) AND (HCOUNT>=230) AND (HCOUNT<=410)) else
-			     not COLOR;
+   -- Dibuja el cuadro y asigna colores
+   --
+	--               |
+	--     Rojo      |    Verde
+	--               |
+	-- -----------------------------
+	--               | 
+	--     Azul      |   Amarillo
+	--               |
+	--
 
+	INPUT_COLOR <= "111100000000" when (((VCOUNT>=0) AND (VCOUNT<=239) AND (HCOUNT>=0) AND (HCOUNT<=319))) else 
+				   "000011110000" when (((VCOUNT>=0) AND (VCOUNT<=239) AND (HCOUNT>319) AND (HCOUNT<640))) else
+				   "000000001111" when (((VCOUNT>239) AND (VCOUNT<480) AND (HCOUNT>=0) AND (HCOUNT<=319))) else
+				   "111111110000" when (((VCOUNT>239) AND (VCOUNT<480) AND (HCOUNT>319) AND (HCOUNT<640)));
 ```
+
 
 ## Actividades ##
 
-1. Dibuje el diagrama de bloques del código suministrado
-2. Modifique el tamaño del elemento desplegado en pantalla, y la posición del mismo.
-3. Despliegue en pantalla un rectangulo tipo marco. La siguiente figura le puede ser de utilidad para entender lo que se pide:
-
-![marco_image](marco.png)
+1. Simule en su computador la aplicacion
