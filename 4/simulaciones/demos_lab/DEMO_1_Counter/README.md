@@ -81,7 +81,7 @@ Ahora, para hacer practica este modulo para simular, se modifico la actulizació
 	end process;
 ```
 
-1. **[VGACounter_tb.vhd](VGACounter_tb.vhd)**: Archivo en el cual se hace el test bench del modulo **VGACounter**.
+5. **[VGACounter_tb.vhd](VGACounter_tb.vhd)**: Archivo en el cual se hace el test bench del modulo **VGACounter**.
 
 ![tb_VGA_counter_top](tb_VGA_counter_top.jpg)
 
