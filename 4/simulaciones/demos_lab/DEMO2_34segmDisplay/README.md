@@ -1,21 +1,21 @@
 # DEMO2: Display 34 segmentos
 
+
+## Funcionalidad ##
+Hacer una aplicación que haciendo uso del modulo [display34segm.vhd](display34segm.vhd) que permita mostrar en pantalla dos letras **A** y **M**. La elección de la letra que se despliega y su color. El archivo asociado a este modulo es [test_34seg_disp.vhd](test_34seg_disp.vhd).
+
 ## Codigos ##
 
-1. [display34segm.vhd](display34segm.vhd)
-2. [test_34seg_disp.vhd](test_34seg_disp.vhd)
-3. [vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)
-4. [Basys3_Master_VGA-34segDisp.xdc](Basys3_Master_VGA-34segDisp.xdc)
+1. **[display34segm.vhd](display34segm.vhd)**: Modulo que genera el caracter alfanumerico:
 
-## display34segm ##
+![image_architecture](display34segm.drawio.jpg)
 
-### Descripción de la entidad 
+El codigo asociado a la entidad anterior se muestra a continuación:
 
 ```vhdl
 entity display34segm is
        generic(SG_WD : integer range 0 to 31 := 5; --Segment width
-               DL    : integer range 0 to 511 := 100 --DYSPLAY_LENGTH
-               --DW:  --TODO: Display width
+               DL    : integer range 0 to 511 := 100 --DYSPLAY_LENGTH              
         );  
         port(segments : in STD_LOGIC_VECTOR (33 downto 0);
              posx :     in integer range 0 to 639;   --disp_posx 
@@ -27,11 +27,26 @@ entity display34segm is
 end display34segm;
 ```
 
-### Arquitectura asociada a la entidad
+2. **[test_34seg_disp.vhd](test_34seg_disp.vhd)**: Modulo 
 
-![image_architecture](display34segm.drawio.jpg)
+```vhdl
+entity test_34seg_disp is
+    Port ( CLK : in  STD_LOGIC;                        -- Clk 50 MHz para propositos de simulación
+           RST : in  STD_LOGIC;                        -- Reset
+	   MSG_SEL: in STD_LOGIC;                      -- Selección de la letra
+           RGB : out  STD_LOGIC_VECTOR (11 downto 0);  -- RGB de salida a la pantalla
+           HS : out  STD_LOGIC;                        -- Señal de sincronizacion horizontal
+           VS : out  STD_LOGIC);                       -- Señal de sincronizacion vertical
+end test_34seg_disp;
+```
 
-**Código VHDL**: [display34segm.vhd](display34segm.vhd)
+3. **[vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)**: Driver VGA
+
+![vga_module](vga_module.jpg)
+
+4. **[test_34seg_disp_tb.vgd](test_34seg_disp_tb.vhd)**: Archivo de test bench del modulo [test_34seg_disp.vhd](test_34seg_disp.vhd)
+
+## display34segm ##
 
 ### Sobre la señal *segments* 
 
@@ -60,23 +75,20 @@ segment = "0000001111011111111000000001000000"
 ![m_image](letra_m.jpg)
 
 
-
 El mapa de caracteres se muestra en la siguiente figura:
 
 ![mapa_image](mapa_caracteres.jpg)
 
 ## Actividades ##
 
-1. Dibuje la entidad **TOP** (sin describir los módulos internos) pero si resaltando las conexiones entre esta entidad y los elementos de la basys3. (**Nota**: No olvide observar el archivo *.xdc* proporcionado en este *demo*).
-2. Compruebe el funcionamiento del sistema. El sistema debe desplegar en la pantalla las siguientes letras:
+1. Dibuje la entidad **TOP** sin describir los módulos internos pero si resaltando las conexiones entre estos dentro de la entidad, es decir dibuje el diagrama de bloques del código suministrado en el archivo [test_34seg_disp.vhd](test_34seg_disp.vhd).
+2. Realizar la simulación online con los archivos proporsionados, esto generará dos imagenes similares a las que se muestran a continuación:
 
 **Caso 1**: Despliegue de la A.
 
-![foto_A](foto_A.jpg)
+![frame_A](frame_A.png)
 
 **Caso 2**: Despliegue de la M.
 
-![foto_A](foto_M.jpg)
+![frame_M](frame_M.png)
 
-3. Dibuje el diagrama de bloques del código suministrado.
-4. Realice las modificaciones en el programa de acuerdo a las indicaciones dadas. Este ejercicio sirve de refuerzo previo a la práctica.
