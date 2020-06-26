@@ -7,7 +7,7 @@ El código mostrado a continuación permite modificar el color del rectangulo y 
 
 ## Codido ##
 
-1. [Simple_Test_VGA.vhd](Simple_Test_VGA.vhd): Este define la entidad encargada de implementar el diseño que se pide. A continuación se muestra el diagrama de bloques asociado:
+1. **[Simple_Test_VGA.vhd](Simple_Test_VGA.vhd)**: Este define la entidad encargada de implementar el diseño que se pide. A continuación se muestra el diagrama de bloques asociado:
 
 ![Simple_Test_VGA](demo_0_Top.jpg)
 
@@ -15,11 +15,11 @@ La arquitectura interna del modulo **Simple_Test_VGA** se muestra en la siguient
 
 ![demo_0](demo_0.jpg)
 
-2. [vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd): Driver VGA
+2. **[vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)**: Driver VGA
 
 ![vga_module](vga_module.jpg)
 
-3. [Basys3_Master_VGA-Rectangulo.xdc](Basys3_Master_VGA-Rectangulo.xdc): Configuración de pines para mapear el diseño en la basys.
+3. **[Basys3_Master_VGA-Rectangulo.xdc](Basys3_Master_VGA-Rectangulo.xdc)**: Configuración de pines para mapear el diseño en la basys.
 
 
 ## Anotaciones ##
