@@ -3,28 +3,28 @@
 A continuación se muestran las simulaciones de los ejemplos practicos (los que se montan en el hardware). Los ejemplos son:
 1. **[DEMO_0_Rectangulo](./DEMO_0_Rectangulo)**: Este ejemplo se modifica un poco respecto al ejemplo original pues lo que se muestra es la pantalla dividida en 4 regiones con diferentes colores de fondo. A continuación se muestran la imagen generada mediante el simulador VGA:
 
-![frame](frame.jpg)
+![frame](frame.png)
 
 2. **[DEMO_1_Counter](./DEMO_1_Counter)**: Este ejemplo muestra el contador BCD de 0 a 999 en pantalla. En las siguientes figuras se muestran tres posibles valores del contador:
 
 * **Valor de 1**:
 
-![frame_01](frame_01.jpg)
+![frame_01](frame_01.png)
 
 * **Valor de 2**:
 
-![frame_02](frame_02.jpg)
+![frame_02](frame_02.png)
 
 * **Valor de 3**:
 
-![frame_02](frame_03.jpg)
+![frame_02](frame_03.png)
 
 3. **[DEMO2_34segmDisplay](./DEMO2_34segmDisplay)**: Este ejemplo permite desplegar dos posibles letras (A o M) con diferentes colores segun la entrada de un switch que selecciona la letra.
 
 * **Caso en el que se despliega la letra A**:
   
-![frame_A](frame_A.jpg)
+![frame_A](frame_A.png)
 
 * **Caso en el que se despliega la latra M**:
 
-![frame_M](frame_M.jpg)
+![frame_M](frame_M.png)
