@@ -27,24 +27,35 @@ entity display34segm is
 end display34segm;
 ```
 
-2. **[test_34seg_disp.vhd](test_34seg_disp.vhd)**: Modulo 
+2. **[test_34seg_disp.vhd](test_34seg_disp.vhd)**: Modulo que, de acuerdo al valor que tome la entrada **MSG_SEL**, permite desplegar dos posibles letras: La **A** con color **verde** y la **M** con color **rojo**
 
 ```vhdl
 entity test_34seg_disp is
     Port ( CLK : in  STD_LOGIC;                        -- Clk 50 MHz para propositos de simulación
            RST : in  STD_LOGIC;                        -- Reset
-	   MSG_SEL: in STD_LOGIC;                      -- Selección de la letra
+	    MSG_SEL: in STD_LOGIC;                      -- Selección de la letra
            RGB : out  STD_LOGIC_VECTOR (11 downto 0);  -- RGB de salida a la pantalla
            HS : out  STD_LOGIC;                        -- Señal de sincronizacion horizontal
            VS : out  STD_LOGIC);                       -- Señal de sincronizacion vertical
 end test_34seg_disp;
 ```
 
-3. **[vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)**: Driver VGA
+A continuación se muestra la figura asociada a la entidad:
+
+![test_34seg_disp](test_34seg_disp.jpg)
+
+La arquitectura interna de este modulo se muestra a continuación:
+
+![test_34seg_disp_arch](test_34seg_disp_arch.jpg)
+
+1. **[vga_ctrl_640x480_60Hz.vhd](vga_ctrl_640x480_60Hz.vhd)**: Driver VGA
 
 ![vga_module](vga_module.jpg)
 
-4. **[test_34seg_disp_tb.vgd](test_34seg_disp_tb.vhd)**: Archivo de test bench del modulo [test_34seg_disp.vhd](test_34seg_disp.vhd)
+4. **[test_34seg_disp_tb.vgd](test_34seg_disp_tb.vhd)**: Archivo de test bench del modulo [test_34seg_disp.vhd](test_34seg_disp.vhd). El archivo test bendh se esquematiza en la siguiente figura:
+
+![test_34seg_disp_tb](test_34seg_disp_tb.jpg)
+
 
 ## display34segm ##
 
