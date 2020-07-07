@@ -7,6 +7,6 @@ Un detector de paridad es un circuito logico que cuenta el némero de **1's** en
 ## Enunciado ##
 
 Diseñar un **detector de paridad impar**:
-1. Usando una maquina de Moore.
-2. Usando una maquina de estados Mealy.
+1. Usando una maquina de Moore ([solución Moore](./solucion_moore)).
+2. Usando una maquina de estados Mealy ([solución Mealy](./solucion_mealy/1)).
 

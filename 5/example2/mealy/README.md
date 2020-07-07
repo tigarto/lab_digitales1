@@ -10,5 +10,5 @@ Dibuje el diagrama de estados y la tabla de transición de estados de un circuit
 ## Codificación en VHDL ## 
 
 A continuación de muestra las dos formas de codificar la solución en VHDL:
-1. Forma 1: [three blocks Mealy machine](./1)
-2. Forma 2: [The two blocks Mealy machine](./2) 
+1. **Forma 1**: [three blocks Mealy machine](./1)
+2. **Forma 2**: [The two blocks Mealy machine](./2) 
