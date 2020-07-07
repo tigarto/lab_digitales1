@@ -39,7 +39,7 @@ A continuación se muestra el diagrama que resume la estructura de diseño de un
 La siguiente tabla muestra el pico y cedula por equipo para definir el ejercicio que le corresponde:
 
 |Ejercicio | Cedulas|Tipo de FSM|
-|-|-|
+|-|-|-|
 | 1 | Cedulas que terminan en numeros pares | Libre elección (Moore o Mealy)|
 | 2 | Todos |Libre elección (Moore o Mealy)|
 | 3 | Cedulas terminadas en numeros pares |Libre elección (Moore o Mealy)|
