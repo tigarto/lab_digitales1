@@ -1,4 +1,56 @@
-# Ejemplos con máquinas de estado #
+# Laboratorio 5 - Maquinas de estado #
+
+## Metodos de diseño en VHDL ##
+
+Los métodos de diseño serán mostrados a traves de ejemplos; sin embargo, a continuación se da un breve introducción de estos.
+
+### Maquinas de estado Moore en VHDL ###
+
+A continuación se muestra el diagrama que resume la estructura de diseño de una maquina Moore en VHDL empleando 3 bloques.
+
+![maquina_moore_tres_bloques](maquina_moore_tres_bloques.jpg)
+
+### Maquinas de estado Mealy en VHDL ###
+
+En lo que respecta a las maquina Mealy hay dos formas de realizar el diseño; a tres bloques y a dos bloques tal y como se muestra a continuación.
+
+#### Maquinas de estado Mealy en VHDL empleando tres bloques ####
+
+A continuación se muestra el diagrama que resume la estructura de diseño de una maquina Mealy en VHDL empleando 3 bloques.
+
+![maquina_mealy_tres_bloques](maquina_mealy_tres_bloques.jpg)
+
+#### Maquinas de estado Mealy en VHDL empleando dos bloques ####
+
+A continuación se muestra el diagrama que resume la estructura de diseño de una maquina Mealy en VHDL empleando 3 bloques.
+
+![maquina_mealy_dos_bloques](maquina_mealy_dos_bloques.jpg)
+
+## Enunciados ##
+
+1. Un circuito secuencial tiene dos entradas **X1**, **X2** y una salida **Z**. Se desea detectar la secuencia **01-10-11-01-10-11** a partir de un estado inicial 00. Cuando se presenta esa secuencia, la salida Z valdrá uno en coincidencia con la última combinación de la secuencia. En cualquier otro caso la salida valdrá cero.
+2. Un circuito está compuesto por una línea de entrada, una de salida y una de sincronismo, tal que la salida valga cero, salvo si llegan cuatro ceros o cuatro unos consecutivos, en cuyo caso aparecerá un uno en la salida, coincidente con el cuarto pulso.
+3. Obtener un circuito secuencial de dos entradas **X1**, **X2** y una salida **Z** tal que la salida permanezca en cero, salvo cuando se han producido tres o más coincidencias sucesivas de las entradas, es decir que **X1 = X2** tres veces seguidas. Se toma como estado inicial (con el que se inicializa el sistema cuando se aplica el reset) aquel para el cual **X1 = 1** y **X2 = 0**.
+4. Diseñar un circuito secuencial que detecte números binarios capicúa de tres bits de longitud. El sistema tendrá una entrada y una salida. La salida valdrá uno, sólo cuando detecte un capicúa y valdrá cero en los demás casos.
+5. Diseñar un dispensador de máquina de gaseosas con las siguientes caracteristicas. Cada gaseosa vale 25 centavos y la máquina acepta monedas de  5 centavos, 10 centavos y 25 centavos de modo que cuando se ha insertado el dinero suficiente, se entrega el refresco y se retorna la devuelta correspondiente. Diseñe un sistema para controlar la máquina de refrescos cuya entrada este asociada a la moneda insertada. Asumir que se inserta una moneda cada ciclo. En lo que respecta a las salidas estas serán la gaseosa y la devuelta.
+
+### Asignación de los ejercicios ###
+
+La siguiente tabla muestra el pico y cedula por equipo para definir el ejercicio que le corresponde:
+
+|Ejercicio | Cedulas|Tipo de FSM|
+|-|-|
+| 1 | Cedulas que terminan en numeros pares | Libre elección (Moore o Mealy)|
+| 2 | Todos |Libre elección (Moore o Mealy)|
+| 3 | Cedulas terminadas en numeros pares |Libre elección (Moore o Mealy)|
+| 4 | Todos |Libre elección (Moore o Mealy)|
+| 5 | Todos |Ambas formas (Moore y Mealy)|
+
+**Notas importantes**: 
+1. Si los integrantes del equipo tienen cedulas pares e impares. Pueden escoger hacer los ejercicios pares o los impares. 
+2. Al simular recuerde **no hacer cambios de la señales de entrada** en el flanco que hace que se paso de un estado a otro.
+
+## Ejemplos con máquinas de estado ##
 
 En el siguiente repositorio se muestran algunos ejemplos donde se implementan máquinas de estado tipo Mealy y tipo Moore empleando VHDL. Los enlaces de los ejemplos se encuentran en:
 1. Dibuje el diagrama de estados y la tabla de transición de estados de un circuito secuencial el cual da una salida Z = 1 solamente cuando la entrada X es igual 1 durante 3 o más intervalos consecutivos de reloj. [Enlace ejemplo 1](./example1/)
