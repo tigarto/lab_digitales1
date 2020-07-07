@@ -29,7 +29,7 @@ A continuación se muestra el diagrama que resume la estructura de diseño de un
 ## Enunciados ##
 
 1. Un circuito secuencial tiene dos entradas **X1**, **X2** y una salida **Z**. Se desea detectar la secuencia **01-10-11-01-10-11** a partir de un estado inicial 00. Cuando se presenta esa secuencia, la salida Z valdrá uno en coincidencia con la última combinación de la secuencia. En cualquier otro caso la salida valdrá cero.
-2. Un circuito está compuesto por una línea de entrada, una de salida y una de sincronismo, tal que la salida valga cero, salvo si llegan cuatro ceros o cuatro unos consecutivos, en cuyo caso aparecerá un uno en la salida, coincidente con el cuarto pulso.
+2. Un circuito está compuesto por una línea de entrada, una de salida y una de sincronismo (reloj), tal que la salida valga cero, salvo si llegan cuatro ceros o cuatro unos consecutivos, en cuyo caso aparecerá un uno en la salida, coincidente con el cuarto pulso.
 3. Obtener un circuito secuencial de dos entradas **X1**, **X2** y una salida **Z** tal que la salida permanezca en cero, salvo cuando se han producido tres o más coincidencias sucesivas de las entradas, es decir que **X1 = X2** tres veces seguidas. Se toma como estado inicial (con el que se inicializa el sistema cuando se aplica el reset) aquel para el cual **X1 = 1** y **X2 = 0**.
 4. Diseñar un circuito secuencial que detecte números binarios capicúa de tres bits de longitud. El sistema tendrá una entrada y una salida. La salida valdrá uno, sólo cuando detecte un capicúa y valdrá cero en los demás casos.
 5. Diseñar un dispensador de máquina de gaseosas con las siguientes caracteristicas. Cada gaseosa vale 25 centavos y la máquina acepta monedas de  5 centavos, 10 centavos y 25 centavos de modo que cuando se ha insertado el dinero suficiente, se entrega el refresco y se retorna la devuelta correspondiente. Diseñe un sistema para controlar la máquina de refrescos cuya entrada este asociada a la moneda insertada. Asumir que se inserta una moneda cada ciclo. En lo que respecta a las salidas estas serán la gaseosa y la devuelta.
@@ -41,14 +41,15 @@ La siguiente tabla muestra el pico y cedula por equipo para definir el ejercicio
 |Ejercicio | Cedulas|Tipo de FSM|
 |-|-|-|
 | 1 | Cedulas que terminan en numeros pares | Libre elección (Moore o Mealy)|
-| 2 | Todos |Libre elección (Moore o Mealy)|
+| 2 | Cedulas que terminan en numeros impares |Libre elección (Moore o Mealy)|
 | 3 | Cedulas terminadas en numeros pares |Libre elección (Moore o Mealy)|
-| 4 | Todos |Libre elección (Moore o Mealy)|
+| 4 | Cedulas que terminan en numeros impares |Libre elección (Moore o Mealy)|
 | 5 | Todos |Ambas formas (Moore y Mealy)|
 
 **Notas importantes**: 
 1. Si los integrantes del equipo tienen cedulas pares e impares. Pueden escoger hacer los ejercicios pares o los impares. 
-2. Al simular recuerde **no hacer cambios de la señales de entrada** en el flanco que hace que se paso de un estado a otro.
+2. Recuerde que todos los sistemas diseñados deben tener la señal de reset para su inicialización.
+3. Al simular recuerde **no hacer cambios de la señales de entrada** en el flanco que hace que se paso de un estado a otro.
 
 ## Ejemplos con máquinas de estado ##
 
