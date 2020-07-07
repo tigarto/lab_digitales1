@@ -9,3 +9,8 @@ Diseñar un circuito secuencial que cumpla con los siguientes requerimientos:
 
 En resumen, el circuito detecta si dos o mas **1's** concecutivos ocurren en un patron de datos a la entrada.
 
+### Solución ###
+
+En los siguientes enlaces se describen las soluciones:
+1. Solución Moore ([Solución Moore](./moore)).
+2. Solución Mealy ([Solución Mealy](./mealy/1)).
