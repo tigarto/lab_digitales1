@@ -1,9 +1,44 @@
 # Ejemplos con máquinas de estado #
 
 En el siguiente repositorio se muestran algunos ejemplos donde se implementan máquinas de estado tipo Mealy y tipo Moore empleando VHDL. Los enlaces de los ejemplos se encuentran en:
-1. [Enlace ejemplo 1](./example1/)
-2. [Enlace ejemplo 2](./example2/)
-3. [Enlace ejemplo 3](./example3/)
+1. Dibuje el diagrama de estados y la tabla de transición de estados de un circuito secuencial el cual da una salida Z = 1 solamente cuando la entrada X es igual 1 durante 3 o más intervalos consecutivos de reloj. [Enlace ejemplo 1](./example1/)
+2. Dibuje el diagrama de estados y la tabla de transición de estados de un circuito secuencial el cual da una salida Z = 1 cuando por una entrada X a ingresado la secuencia de bits 1101. El solapamiento es permitido. [Enlace ejemplo 2](./example2/)
+3. Aqui hay dos ejemplos:
+   
+   **Ejemplo 3.1**: Design a sequence detector implementing a Mealy state machine using three always blocks. The Mealy state machine has one input (ain) and one output (yout). The output yout is 1 if and only if the total number of 1s received is divisible by 3 (**hint**: 0 is inclusive, however, reset cycle(s) do not count as 0- see in simulation waveform time=200). Develop a testbench and verify the model through a behavioral simulation. Use SW0 as the clock input, SW1 as the ain input, the BTNU button as reset input to the circuit, number of 1s count on LED7:LED4, and LED0 as the yout output. Go through the design flow, generate the bitstream, and download it into the Nexys3 board. Verify the functionality.[Enlace ejemplo 3](./example3/)
+   
+   **Ejemplo 3.2**: Design a sequence detector implementing a Moore state machine using three always blocks. The Moore state machine has two inputs (ain[1:0]) and one output (yout). The output yout begins as 0 and remains a constant value unless one of the following input sequences occurs:
+   * The input sequence ain[1:0] = 01, 00 causes the output to become 0.
+   * The input sequence ain[1:0] = 11, 00 causes the output to become 1.
+   * The input sequence ain[1:0] = 10, 00 causes the output to toggle.
+
+   Develop a testbench (similar to the waveform shown below and verify the model through a behavioral simulation. Use SW0 as the clock input, SW2-SW1 as the ain[1:0] input, the BTNU button as reset input to the circuit, and LED0 as the yout output. Go through the design flow, generate the bitstream, and download it into the Nexys3 board. Verify the functionality.
+4. Un detector de paridad es un circuito logico que cuenta el némero de 1's en una entrada serial (bit-serial input stream). Si el circuito hace que su salida sea 1 cuando la entrada contiene un numero impares de 1, si el circuito es llamado un detector de paridad impar (odd parity checker). Por otro lado, Si la salida es llevada a 1 cuando la entrada tiene un numero par de 1's, es un detector de paridad par (even parity checker). [Enlace ejemplo 4](./example4/)
+5. Implementar un shift register que tenga una entrada y que a la salida tenga un bus de 3 bits para el envio del bit ingresado a la entrada. [Enlace ejemplo 5](./example5/)
+6. Diseñar un circuito secuencial que cumpla con los siguientes requerimientos:
+   * El circuito tendra una entrada (w) y una salida (z).
+   * Los cambios ocurren en el flanco positivo de la señal de reloj.
+   * La señal z es igual a 1 si durante los dos ciclos de reloj inmediatamente enteriores a la entrada w son 1. Por otro lado el valor de la salida z es 0.
+  
+   En resumen, el circuito detecta si dos o mas 1's concecutivos ocurren en un patron de datos a la entrada.[Enlace ejemplo 6](./example6/)
+7. Un controlador una de ventana (controller window) enviara las señales de control apropiadas para abrir o cerrar un motor siempre que un push button sea presionado. 
+   
+   ![diagrama_bloques](./example7/diagrama_bloques.jpg)
+
+   [Enlace ejemplo 7](./example7/)
+8. Desarrolle un controlador para un semáforo en la intersección concurrida de un campus. A continuación la razón que motivó el diseño del sistema:
+   
+   > Los estudiantes de ingeniería están ocupados leyendo sobre FSM en su libro de texto favorito y no están mirando hacia donde van. Los jugadores de fútbol se apresuran entre campos de atletismo y el comedor en Bravado Boulevard tirando la pelota de un lado a otro y tampoco miran hacia dónde van. Ya se han producido varias lesiones graves en la intersección de estos dos caminos, y el decano de estudiantes le pide a usted instalar un semáforo antes de que haya accidentes más graves.
+   
+   Para resolver el problema usted decide instalar dos sensores de tráfico, TA y TB en Academic Ave. y Bravado Blvd. Cada sensor indica verdadero si los estudiantes están presentes y falso si la calle está vacía. También, instala dos semáforos, LA y LB para controlar el tráfico. Cada uno de los semáforos puede desplegar tres tipos de luces (rojo, amarillo o verde). La intersección y sensores son mostrados en la siguiente figura.
+
+   ![semaforo_fig](./example8/semaforo_fig.jpg)
+
+   Usted proporciona un reloj con periodo de 5 segundos. En cada tick de reloj (flanco de subida), las luces pueden cambiar basadas en los sensores de tráfico. Tambien, proporsiona un reset demanera que los tecnicos puedan poner el controlador a un estado inicial conocido una vez realizan la instalación de este. La siguiente figura muestra el diagrama de caja negra del sistema.
+
+   ![semaforo_diagrama_bloques](./example8/semaforo_diagrama_bloques.jpg)
+
+   [Enlace ejemplo 8](./example8/)
 
 
 <!---
