@@ -1,0 +1,7 @@
+v 4
+file . "seq_detector_tb.vhd" "2f5c3e12a61019ab8f3053570207c4d34342fccc" "20200706060507.718":
+  entity seq_detector_tb at 1( 0) + 0 on 13;
+  architecture behavioral of seq_detector_tb at 10( 182) + 0 on 14;
+file . "seq_detector.vhd" "a104155db3f5fcacf7b636119281bc46b24abca7" "20200706060504.336":
+  entity seq_detector at 1( 0) + 0 on 11;
+  architecture seq_detector_arch of seq_detector at 14( 302) + 0 on 12;

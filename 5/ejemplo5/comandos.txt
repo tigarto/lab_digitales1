@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit shift_register.vhd 
+ghdl -a --ieee=synopsys -fexplicit shift_register_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  shift_register_tb --stop-time=85ns --vcd=shift_register_tb_results.vcd
+gtkwave shift_register_tb_results.vcd

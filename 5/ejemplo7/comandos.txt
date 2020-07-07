@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit PVWC.vhd 
+ghdl -a --ieee=synopsys -fexplicit PVWC_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  PVWC_tb --stop-time=60ns --vcd=PVWC_tb_results.vcd
+gtkwave PVWC_tb_results.vcd

@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit odd_fsm_moore.vhd 
+ghdl -a --ieee=synopsys -fexplicit odd_fsm_moore_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  odd_fsm_moore_tb --stop-time=200ns --vcd=odd_fsm_moore_tb_results.vcd
+gtkwave odd_fsm_moore_tb_results.vcd

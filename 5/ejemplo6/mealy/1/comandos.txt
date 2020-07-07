@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit seq_detector.vhd 
+ghdl -a --ieee=synopsys -fexplicit seq_detector_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit seq_detector_tb --stop-time=245ns --vcd=seq_detector_tb_results.vcd
+gtkwave seq_detector_tb_results.vcd

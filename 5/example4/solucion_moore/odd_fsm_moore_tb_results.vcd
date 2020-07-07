@@ -1,0 +1,202 @@
+$date
+  Mon Jul  6 18:38:29 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module odd_fsm_moore_tb $end
+$var reg 1 ! clk_int $end
+$var reg 1 " reset_int $end
+$var reg 1 # x_int $end
+$var reg 1 $ z_int $end
+$scope module dut $end
+$var reg 1 % reset $end
+$var reg 1 & clk $end
+$var reg 1 ' x $end
+$var reg 1 ( z $end
+$comment state is not handled $end
+$comment next_state is not handled $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+1"
+0#
+0$
+1%
+0&
+0'
+0(
+#3000000
+0"
+0%
+#5000000
+1!
+1&
+#10000000
+0!
+0&
+#15000000
+1!
+1&
+#20000000
+0!
+0&
+#25000000
+1!
+1&
+#30000000
+0!
+1#
+0&
+1'
+#35000000
+1!
+1$
+1&
+1(
+#40000000
+0!
+0#
+0&
+0'
+#45000000
+1!
+1&
+#50000000
+0!
+1#
+0&
+1'
+#55000000
+1!
+0$
+1&
+0(
+#60000000
+0!
+0&
+#65000000
+1!
+1$
+1&
+1(
+#70000000
+0!
+0&
+#75000000
+1!
+0$
+1&
+0(
+#80000000
+0!
+0#
+0&
+0'
+#85000000
+1!
+1&
+#90000000
+0!
+0&
+#95000000
+1!
+1&
+#100000000
+0!
+1#
+0&
+1'
+#105000000
+1!
+1$
+1&
+1(
+#110000000
+0!
+0&
+#115000000
+1!
+0$
+1&
+0(
+#120000000
+0!
+0&
+#125000000
+1!
+1$
+1&
+1(
+#130000000
+0!
+0&
+#135000000
+1!
+0$
+1&
+0(
+#140000000
+0!
+0#
+0&
+0'
+#145000000
+1!
+1&
+#150000000
+0!
+0&
+#155000000
+1!
+1&
+#160000000
+0!
+0&
+#165000000
+1!
+1&
+#170000000
+0!
+1#
+0&
+1'
+#175000000
+1!
+1$
+1&
+1(
+#180000000
+0!
+0&
+#185000000
+1!
+0$
+1&
+0(
+#190000000
+0!
+0#
+0&
+0'
+#195000000
+1!
+1&
+#200000000
+0!
+0&

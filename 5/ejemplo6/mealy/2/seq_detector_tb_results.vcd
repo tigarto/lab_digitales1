@@ -1,0 +1,152 @@
+$date
+  Mon Jul  6 01:05:12 2020
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module std_logic_arith $end
+$upscope $end
+$scope module std_logic_unsigned $end
+$upscope $end
+$scope module seq_detector_tb $end
+$var reg 1 ! clock $end
+$var reg 1 " reset $end
+$var reg 1 # w $end
+$var reg 1 $ z $end
+$scope module dut $end
+$var reg 1 % clock $end
+$var reg 1 & reset $end
+$var reg 1 ' w $end
+$var reg 1 ( z $end
+$comment current_state is not handled $end
+$comment next_state is not handled $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+0!
+1"
+0#
+0$
+0%
+1&
+0'
+0(
+#10000000
+1!
+1%
+#20000000
+0!
+0"
+0%
+0&
+#30000000
+1!
+1%
+#32000000
+1#
+1'
+#40000000
+0!
+0%
+#50000000
+1!
+1$
+1%
+1(
+#52000000
+0#
+0$
+0'
+0(
+#60000000
+0!
+0%
+#70000000
+1!
+1%
+#72000000
+1#
+1'
+#80000000
+0!
+0%
+#90000000
+1!
+1$
+1%
+1(
+#100000000
+0!
+0%
+#110000000
+1!
+1%
+#112000000
+0#
+0$
+0'
+0(
+#120000000
+0!
+0%
+#130000000
+1!
+1%
+#132000000
+1#
+1'
+#140000000
+0!
+0%
+#150000000
+1!
+1$
+1%
+1(
+#160000000
+0!
+0%
+#170000000
+1!
+1%
+#180000000
+0!
+0%
+#190000000
+1!
+1%
+#192000000
+0#
+0$
+0'
+0(
+#200000000
+0!
+0%
+#210000000
+1!
+1%
+#212000000
+1#
+1'
+#220000000
+0!
+0%
+#230000000
+1!
+1$
+1%
+1(
+#240000000
+0!
+0%

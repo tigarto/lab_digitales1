@@ -3,7 +3,7 @@
 En el siguiente repositorio se muestran algunos ejemplos donde se implementan máquinas de estado tipo Mealy y tipo Moore empleando VHDL. Los enlaces de los ejemplos se encuentran en:
 1. [Enlace ejemplo 1](./example1/)
 2. [Enlace ejemplo 2](./example2/)
-3. [Enlace ejemplo 2](./example3/)
+3. [Enlace ejemplo 3](./example3/)
 
 
 <!---

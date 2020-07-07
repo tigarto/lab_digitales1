@@ -1,0 +1,4 @@
+ghdl -a --ieee=synopsys -fexplicit control_traffic.vhd 
+ghdl -a --ieee=synopsys -fexplicit control_traffic_tb.vhd
+ghdl -r --ieee=synopsys -fexplicit  control_traffic_tb --stop-time=55ns --vcd=control_traffic_tb_results.vcd
+gtkwave control_traffic_tb_results.vcd
